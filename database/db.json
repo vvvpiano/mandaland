@@ -1,5 +1,13 @@
 {
-    "users": [],
-    "mandals": [],
-    "minimandals": []
+  "users": [
+    {
+      "userId": "111098462535511801220",
+      "email": "vvvpiano60@gmail.com",
+      "name": "김서영",
+      "imagePath": "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw=s96-c",
+      "id": 1
+    }
+  ],
+  "mandals": [],
+  "minimandals": []
 }
