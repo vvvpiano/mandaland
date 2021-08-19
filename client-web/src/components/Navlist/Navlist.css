@@ -1,0 +1,46 @@
+.navlist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 49px;
+}
+
+.navlist-container:hover {
+    background-color: black;
+}
+
+.navlist-container:hover .navlist-link {
+    color: white;
+}
+
+.navlist-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 190px;
+}
+.navlist-icon {
+    width: 23px;
+    height: 23px;
+    margin-right: 10px;
+}
+
+
+.navlist-link-wrapper {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+}
+
+.navlist-link {
+    font-size: 1.2rem;
+    display: block;
+}
+
+.navlist-drop-button {
+    font-size: 1.2rem;
+    margin-left: 10px;
+    color: white;
+}
