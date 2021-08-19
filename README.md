@@ -13,6 +13,7 @@ cd mandaland
 ```
 # pwd: .../mandaland
 cd database
+npm install
 npm start
 ```
 
@@ -20,6 +21,7 @@ npm start
 ```
 # pwd: .../mandaland
 cd backend
+npm install
 npm start
 ```
 
@@ -27,6 +29,7 @@ npm start
 ```
 # pwd: .../mandaland
 cd client-web
+npm install
 npm start
 ```
 
