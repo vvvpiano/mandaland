@@ -9,10 +9,6 @@
 	background-color: black;
 }
 
-.navlist-container:hover .navlist-link {
-	color: white;
-}
-
 .navlist-flex-container {
 	display: flex;
 	justify-content: space-between;
@@ -35,6 +31,7 @@
 }
 
 .navlist-link {
+	color: white;
 	font-size: 1.2rem;
 	display: block;
 	transition-property: visibility;

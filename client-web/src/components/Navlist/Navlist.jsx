@@ -19,7 +19,7 @@ const Navlist = ({title, iconPath, open}) => {
             return (
                 <a className="navlist-container" href="#">
                     <div className="navlist-flex-container">
-                        <img className="navlist-icon" src={iconPath}/>
+                        <img className="navlist-icon" src={iconPath} alt="navlist-icon"/>
                         <div className="navlist-link-wrapper" style={{width:"0px", paddingRight:"0px"}}>
                             <div className="navlist-link" style={{visibility:"hidden"}}>{title}</div>
                         </div>

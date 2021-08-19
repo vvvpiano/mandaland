@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import NavProfile from '../NavProfile/NavProfile';
 import Navlist from '../Navlist/Navlist';
 
 const Navbar = () => {
@@ -27,6 +28,7 @@ const Navbar = () => {
         const tempPath = window.location.origin + "/logo192.png";
         return (
             <nav style={{width:renderNavWidth()+'px'}}>
+                <NavProfile open={open}/>
                 <div>
                     <Navlist title="Home" iconPath={tempPath} open={open}/>
                     <Navlist title="Feed" iconPath={tempPath} open={open}/>

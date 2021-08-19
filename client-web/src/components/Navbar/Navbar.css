@@ -1,6 +1,8 @@
 nav {
+	position: absolute;
 	background-color: #969696;
 	width: 280px;
 	height: 100%;
 	transition: width 0.5s;
+	top: 80px;
 }
