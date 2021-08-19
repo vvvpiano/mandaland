@@ -2,12 +2,14 @@ import { Router, Route, Switch } from "react-router-dom";
 import history from "./history";
 
 import Main from "./pages/Main";
+import Header from './components/Header';
 import Three from "./pages/Three";
 
 function App() {
   return (
     <div className="App">
       <Router history={history}>
+        <Header />
         <Switch>
           <div>
             <Route path="/" exact component={Main}/>
