@@ -1,0 +1,84 @@
+.profileBtn {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    border: 2px solid #707070;
+    margin:auto 10px;
+    cursor: pointer;
+}
+.profileWrapper {
+    display: flex;
+    height: 36px;
+}
+.settingNavModal > div{
+    height: 30px;
+    line-height: 30px;
+    border:1px solid #000
+}
+.alertIcon {
+    margin: auto 25px;
+    cursor: pointer;
+}
+
+.menu {
+    background: #ffffff;
+    border-radius: 8px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 150px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility -3.5s;
+  }
+  
+  .menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    margin-right: 57px;
+    width: 150px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu li {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .menu li span {
+    text-decoration: none;
+    color: #000;
+    padding: 15px 20px;
+    display: block;
+  }
+  .menu-trigger {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    vertical-align: middle;
+    transition: box-shadow 0.4s ease;
+  }
+  
+  .menu-trigger:hover {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-trigger span {
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: 14px;
+    margin: 0 10px;
+  }
+  
+  .menu-trigger img {
+    border-radius: 90px;
+  }
