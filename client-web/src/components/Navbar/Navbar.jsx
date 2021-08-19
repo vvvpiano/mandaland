@@ -27,17 +27,18 @@ const Navbar = () => {
         const tempPath = window.location.origin + "/logo192.png";
         return (
             <nav style={{width:renderNavWidth()+'px'}}>
-                <Navlist title="Home" iconPath={tempPath}/>
-                <Navlist title="Feed" iconPath={tempPath}/>
-                <Navlist title="Mandalplan" iconPath={tempPath}/>
-                <Navlist title="Mandaland" iconPath={tempPath}/>
-                <Navlist title="Setting" iconPath={tempPath}/>
-                <button class="toggle-button" onClick={onToggleClick}>{renderToggleTitle()}</button>
+                <div>
+                    <Navlist title="Home" iconPath={tempPath} open={open}/>
+                    <Navlist title="Feed" iconPath={tempPath} open={open}/>
+                    <Navlist title="Mandalplan" iconPath={tempPath} open={open}/>
+                    <Navlist title="Mandaland" iconPath={tempPath} open={open}/>
+                    <Navlist title="Setting" iconPath={tempPath} open={open}/>
+                    <button class="toggle-button" onClick={onToggleClick}>{renderToggleTitle()}</button>
+                </div>
             </nav>
         )
     }
 
-    console.log("state:", open)
     return (
         <div>
             {renderContents()}

@@ -1,46 +1,47 @@
 .navlist-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 49px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 49px;
 }
 
 .navlist-container:hover {
-    background-color: black;
+	background-color: black;
 }
 
 .navlist-container:hover .navlist-link {
-    color: white;
+	color: white;
 }
 
 .navlist-flex-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 190px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 .navlist-icon {
-    width: 23px;
-    height: 23px;
-    margin-right: 10px;
+	width: 23px;
+	height: 23px;
+	margin-right: 10px;
 }
 
-
 .navlist-link-wrapper {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    height: 40px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	width: 125px;
+	height: 40px;
+	transition: width 0.5s;
+	padding-right: 10px;
 }
 
 .navlist-link {
-    font-size: 1.2rem;
-    display: block;
+	font-size: 1.2rem;
+	display: block;
+	transition-property: visibility;
+	transition-delay: 0.15s;
 }
 
 .navlist-drop-button {
-    font-size: 1.2rem;
-    margin-left: 10px;
-    color: white;
+	font-size: 1.2rem;
+	color: white;
 }
