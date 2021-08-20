@@ -1,8 +1,19 @@
 nav {
-	position: absolute;
 	background-color: #969696;
 	width: 280px;
 	height: 100%;
 	transition: width 0.5s;
-	top: 80px;
+	position: relative;
+}
+
+.toggle-button {
+	width: 42px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: white;
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	bottom: 30px;
+	/* margin: 20px 20px 30px 220px; */
 }

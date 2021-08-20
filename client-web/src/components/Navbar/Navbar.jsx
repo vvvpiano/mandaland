@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import NavProfile from '../NavProfile/NavProfile';
 import Navlist from '../Navlist/Navlist';
+import NavMonthly from '../NavMonthly/NavMonthly';
 
 const Navbar = () => {
     const [open, setOpen] = useState(true);
@@ -28,23 +29,24 @@ const Navbar = () => {
         const tempPath = window.location.origin + "/logo192.png";
         return (
             <nav style={{width:renderNavWidth()+'px'}}>
-                <NavProfile open={open}/>
+                <NavProfile open={open} />
                 <div>
-                    <Navlist title="Home" iconPath={tempPath} open={open}/>
-                    <Navlist title="Feed" iconPath={tempPath} open={open}/>
-                    <Navlist title="Mandalplan" iconPath={tempPath} open={open}/>
-                    <Navlist title="Mandaland" iconPath={tempPath} open={open}/>
-                    <Navlist title="Setting" iconPath={tempPath} open={open}/>
-                    <button class="toggle-button" onClick={onToggleClick}>{renderToggleTitle()}</button>
+                    <Navlist title="Home" iconPath={tempPath} open={open} />
+                    <Navlist title="Feed" iconPath={tempPath} open={open} />
+                    <Navlist title="Mandalplan" iconPath={tempPath} open={open} />
+                    <Navlist title="Mandaland" iconPath={tempPath} open={open} />
+                    <Navlist title="Setting" iconPath={tempPath} open={open} />
                 </div>
+                <NavMonthly open={open} />
+                <div class="toggle-button" onClick={onToggleClick} >{renderToggleTitle()}</div>
             </nav>
         )
     }
 
     return (
-        <div>
+        <React.Fragment>
             {renderContents()}
-        </div>
+        </React.Fragment>
     )
 }
 
