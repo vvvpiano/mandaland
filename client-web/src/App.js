@@ -3,7 +3,7 @@ import history from "./history";
 import './components/common.css'
 
 import Main from "./pages/Main";
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Three from "./pages/Three";
 
