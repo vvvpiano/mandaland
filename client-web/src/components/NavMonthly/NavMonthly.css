@@ -52,6 +52,39 @@
 	border: 1px solid black;
 	border-radius: 11px;
 	width: 230px;
-	height: 156px;
+	/* height: 138px; */
 	margin-top: 14px;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	padding: 9px 0;
+}
+
+.tile-container {
+	display: grid;
+	/* height: 124px; */
+	grid-template-rows: fit-content(21px);
+	grid-template-columns: repeat(7, 21px);
+	row-gap: 3px;
+	column-gap: 10px;
+}
+
+.weekday-tile {
+	width: 21px;
+	height: 11px;
+	line-height: 11px;
+	font-size: 0.7rem;
+	margin-bottom: 5px;
+}
+
+.day-tile {
+	width: 21px;
+	height: 21px;
+	font-size: 0.8rem;
+	background-color: #f0f0f0;
+	line-height: 21px;
+}
+
+.day-tile.empty {
+	background-color: white;
 }
