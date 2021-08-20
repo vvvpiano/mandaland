@@ -28,18 +28,24 @@ class Navbar extends React.Component {
 
     renderContents = () => 
     {
-        const tempPath = window.location.origin + "/logo192.png";
+        const imagePaths = [
+            "/icons/home.svg",
+            "/icons/search_white.svg",
+            "/icons/plan.svg",
+            "/icons/land.svg",
+            "/icons/setting.svg",
+        ].map(path => window.location.origin + path);
         const tempLink = "/";
 
         return (
-            <nav style={{width:this.renderNavWidth()+'px'}}>
+            <nav className="navbar" style={{width:this.renderNavWidth()+'px'}}>
                 <NavProfile open={this.state.open} userProfile={this.props.user} />
                 <div>
-                    <Navlist title="Home" iconPath={tempPath} open={this.state.open} aLink={tempLink} />
-                    <Navlist title="Feed" iconPath={tempPath} open={this.state.open} aLink={tempLink} />
-                    <Navlist title="Mandalplan" iconPath={tempPath} open={this.state.open} aLink={tempLink} dropContent={this.dropContent} />
-                    <Navlist title="Mandaland" iconPath={tempPath} open={this.state.open} aLink={tempLink} />
-                    <Navlist title="Setting" iconPath={tempPath} open={this.state.open} aLink={tempLink} />
+                    <Navlist title="Home" iconPath={imagePaths[0]} open={this.state.open} aLink={tempLink} />
+                    <Navlist title="Feed" iconPath={imagePaths[1]} open={this.state.open} aLink={tempLink} />
+                    <Navlist title="Mandalplan" iconPath={imagePaths[2]} open={this.state.open} aLink={tempLink} dropContent={this.dropContent} />
+                    <Navlist title="Mandaland" iconPath={imagePaths[3]} open={this.state.open} aLink={tempLink} />
+                    <Navlist title="Setting" iconPath={imagePaths[4]} open={this.state.open} aLink={tempLink} />
                 </div>
                 <NavMonthly open={this.state.open} />
                 <div className="toggle-button-wrapper">

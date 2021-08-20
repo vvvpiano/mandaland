@@ -6,12 +6,14 @@ a {
 html,
 body {
 	margin: 0;
+	height: 100%;
 }
 
 .main-container {
 	position: absolute;
 	top: 80px;
 	display: flex;
+	height: 100%;
 }
 
 .main-body {

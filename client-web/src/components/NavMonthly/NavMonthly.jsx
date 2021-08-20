@@ -32,13 +32,13 @@ const NavMonthly = ({open}) => {
 
     const renderMonthTitle = () => {
         const monthYearTitle = `${monthList[theFirst.getMonth()]}, ${theFirst.getFullYear()}`;
-        const tempPath = window.location.origin + "/logo192.png";
+        const paths = ["/icons/arrow_left.svg", "/icons/arrow_right.svg"].map(path => window.location.origin + path);
         return (
             <div className="month-title-wrapper">
                 <div className="month-title-container">
-                    <img src={tempPath} alt="left-arrow" className="arrow-button left" onClick={onClickLeft} />
+                    <img src={paths[0]} alt="left-arrow" className="arrow-button left" onClick={onClickLeft} />
                     <div>{monthYearTitle}</div>
-                    <img src={tempPath} alt="right-arrow" className="arrow-button right" onClick={onClickRight} />
+                    <img src={paths[1]} alt="right-arrow" className="arrow-button right" onClick={onClickRight} />
                 </div>
             </div>
         )
