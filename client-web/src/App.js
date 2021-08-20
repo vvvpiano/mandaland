@@ -3,6 +3,8 @@ import history from "./history";
 import Main from "./pages/Main";
 import Header from './components/Header/Header';
 import MyMandalList from "./pages/MyMandalList/MyMandalList";
+import './components/common.css'
+
 import Three from "./pages/Three";
 
 function App() {
