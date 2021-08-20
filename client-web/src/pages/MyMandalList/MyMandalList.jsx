@@ -8,7 +8,6 @@ const MyMandalList = () => {
     
     return (
         <div className="wrapMandallist">
-            <nav className="tempNav">nav area</nav>
             <section className="mandalSmallList">
                 <div className="wrapModal">
                 <nav className="mandalViewChanger">
