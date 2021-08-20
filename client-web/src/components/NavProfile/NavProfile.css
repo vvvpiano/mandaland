@@ -1,0 +1,35 @@
+.navprofile-container {
+	height: 330px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 40px;
+	visibility: visible;
+}
+
+.navprofile-container.close {
+	visibility: hidden;
+}
+
+.navprofile {
+	width: 230px;
+	height: 220px;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 40px 25px 13px 25px;
+}
+
+.navprofile-image {
+	width: 180px;
+	height: 180px;
+	border-radius: 30px;
+}
+
+.navprofile-name {
+	color: white;
+	font-size: 1.8rem;
+}
