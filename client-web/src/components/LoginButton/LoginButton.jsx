@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {signIn, signOut} from '../actions';
+import {signIn, signOut} from '../../actions';
+import './LoginButton.css'
 
 class LoginButton extends React.Component {
     componentDidMount() {
@@ -47,14 +48,14 @@ class LoginButton extends React.Component {
             if (this.props) {
                 return (
                     <React.Fragment>
-                        <span className="link" onClick={this.onSignOutClick} >로그아웃</span>
+                        <span className="link" onClick={this.onSignOutClick}>로그아웃</span>
                     </React.Fragment>
                 )
             }
             return null;
-        } else {
+        } else {                
             return (
-                <span id="login" className="link" onClick={this.onSignInClick} >로그인</span>
+                <span id="login" className="link" onClick={this.onSignInClick}>로그인</span>
             )
         }
     }
