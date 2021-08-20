@@ -3,7 +3,12 @@ nav {
 	width: 280px;
 	height: 100%;
 	transition: width 0.5s;
-	position: relative;
+}
+
+.toggle-button-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 20px;
 }
 
 .toggle-button {
@@ -12,8 +17,4 @@ nav {
 	border-radius: 10px;
 	background-color: white;
 	cursor: pointer;
-	position: absolute;
-	right: 20px;
-	bottom: 30px;
-	/* margin: 20px 20px 30px 220px; */
 }

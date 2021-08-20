@@ -13,6 +13,7 @@
 .navmonthly-title {
 	font-size: 1.2rem;
 	color: white;
+	white-space: nowrap;
 }
 
 .month-title-wrapper {

@@ -6,6 +6,10 @@ import NavMonthly from '../NavMonthly/NavMonthly';
 
 const Navbar = () => {
     const [open, setOpen] = useState(true);
+    const dropContent = [
+        {dropTitle: "My", dropLink: "/"},
+        {dropTitle: "New", dropLink: "/"}
+    ]
 
     const onToggleClick = () => {
         const state = open ? false : true;
@@ -27,18 +31,22 @@ const Navbar = () => {
     const renderContents = () => 
     {
         const tempPath = window.location.origin + "/logo192.png";
+        const tempLink = "/";
+
         return (
             <nav style={{width:renderNavWidth()+'px'}}>
                 <NavProfile open={open} />
                 <div>
-                    <Navlist title="Home" iconPath={tempPath} open={open} />
-                    <Navlist title="Feed" iconPath={tempPath} open={open} />
-                    <Navlist title="Mandalplan" iconPath={tempPath} open={open} />
-                    <Navlist title="Mandaland" iconPath={tempPath} open={open} />
-                    <Navlist title="Setting" iconPath={tempPath} open={open} />
+                    <Navlist title="Home" iconPath={tempPath} open={open} aLink={tempLink} />
+                    <Navlist title="Feed" iconPath={tempPath} open={open} aLink={tempLink} />
+                    <Navlist title="Mandalplan" iconPath={tempPath} open={open} aLink={tempLink} dropContent={dropContent} />
+                    <Navlist title="Mandaland" iconPath={tempPath} open={open} aLink={tempLink} />
+                    <Navlist title="Setting" iconPath={tempPath} open={open} aLink={tempLink} />
                 </div>
                 <NavMonthly open={open} />
-                <div class="toggle-button" onClick={onToggleClick} >{renderToggleTitle()}</div>
+                <div className="toggle-button-wrapper">
+                    <div className="toggle-button" onClick={onToggleClick} >{renderToggleTitle()}</div>
+                </div>
             </nav>
         )
     }
