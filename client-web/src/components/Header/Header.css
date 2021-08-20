@@ -5,3 +5,10 @@
     background-color: #f0f0f0;
     height: 42px;
 }
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}

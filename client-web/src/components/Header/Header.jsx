@@ -9,7 +9,7 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <header className="background">
+        <header className="background fixed">
             <Logo/>
             <SearchBox/>
             <Profile />
