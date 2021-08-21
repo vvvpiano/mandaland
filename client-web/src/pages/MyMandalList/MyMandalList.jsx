@@ -8,7 +8,6 @@ const MyMandalList = () => {
     
     return (
         <div className="wrapMandallist">
-            <nav className="tempNav">nav area</nav>
             <section className="mandalSmallList">
                 <div className="wrapModal">
                 <nav className="mandalViewChanger">
@@ -18,7 +17,22 @@ const MyMandalList = () => {
                     </select>
                     <span className="myText">MY</span>
                 </nav>
-                <article className="fourMandals">
+                <section className="gridContainer">
+                    <article className="gridItem">
+                        <div className="myMiniProfile"></div>
+                        <div></div>
+                    </article>
+                    <article className="gridItem">
+
+                    </article>
+                    <article className="gridItem">
+
+                    </article>
+                    <article className="gridItem">
+
+                    </article>
+                </section>
+                {/* <article className="fourMandals">
                     <h3 className="mandalsTitle">진행 중인 만다라트</h3>
 
                     {currentMandalArr.map((mandal) => {
@@ -31,7 +45,7 @@ const MyMandalList = () => {
                     {finishedMandalArr.map((mandal) => {
                         return <MiniMandalBox key={mandal.id} title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}/>   
                     })} 
-                </article>
+                </article> */}
                 </div>
             </section>
         </div>
