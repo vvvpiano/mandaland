@@ -5,6 +5,7 @@ import Main from "./pages/Main";
 import Header from './components/Header/Header';
 import MyMandalList from "./pages/MyMandalList/MyMandalList";
 import Three from "./pages/Three";
+import './components/reset.css'
 import './components/common.css'
 
 
@@ -19,7 +20,7 @@ function App() {
         <div className="main-container">
           <Navbar />
           <Switch>
-            <div>
+            <div className="main-body">
               <Route path="/" exact component={Main}/>
               <Route path="/mandalplan" exact component={MyMandalList} />
               <Route path="/three" exact component={Three}/>
