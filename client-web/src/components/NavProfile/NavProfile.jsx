@@ -4,14 +4,18 @@ import "./NavProfile.css";
 const NavProfile = ({open, userProfile}) => {
     const {imagePath, name, email} = userProfile;
 
-    const renderClassName= () => {
+    const renderImage = () => {
+        return open && imagePath ? <img className="navprofile-image" src={imagePath} alt="profile image" /> : null;
+    }
+
+    const renderClassName = () => {
         return open || open === undefined ? "" : "close";
     }
 
     return (
         <div className={`navprofile-container ${renderClassName()}`} >
             <div className="navprofile">
-                <img className="navprofile-image" src={imagePath} alt="profile image" />
+                {renderImage()}
             </div>
             <div className="navprofile-name">Hi, {name}</div>
             <div>{email}</div>
