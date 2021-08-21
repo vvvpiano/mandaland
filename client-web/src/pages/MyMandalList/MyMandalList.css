@@ -17,6 +17,7 @@ body {
     display: flex;
 }
 .myText {
+    font-family: Archivo;
     border-left: 1px solid #707070;
     font-size: 20px;
     padding: 0 34px;
@@ -37,6 +38,7 @@ body {
     /* margin-right: 70px; */
 }
 .mandalsTitle {
+	font-family: AppleSDGothic;
     font-size: 22px;
     font-weight: 600;
     width: 100%;
