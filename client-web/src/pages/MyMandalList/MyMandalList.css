@@ -1,7 +1,10 @@
 body {
     overflow-x: hidden;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f41cd398c77eff450968f5eb71ba9fb6b90fb3f6
 .mandalSmallList{
     width: calc(100% - 280px);
 }
