@@ -1,6 +1,7 @@
 import React from 'react';
 import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox'
 import { connect } from 'react-redux';
+import MandalViewChanger from '../../components/MandalViewChanger/MandalViewChanger';
 import './MyMandalList.css'
 
 const MyMandalList = (props) => {
@@ -8,13 +9,7 @@ const MyMandalList = (props) => {
         <div className="wrapMandallist">
             <section className="mandalSmallList">
                 <div className="wrapModal">
-                <nav className="mandalViewChanger">
-                    <select name="" id="" className="plannerSelectBox">
-                        <option value="">MANDALPLAN</option>
-                        <option value="">MANDAL2</option>
-                    </select>
-                    <span className="myText">MY</span>
-                </nav>
+                <MandalViewChanger />
                 <section className="gridContainer">
                     {/* 1. profile */}
                     <article className="gridItem">
