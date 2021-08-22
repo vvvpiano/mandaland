@@ -1,22 +1,25 @@
-import { CREATE_LOG, FETCH_LOG } from "../type";
+import { CREATE_LOG, FETCH_LOG, FETCH_MONTH_LOG } from "../type";
 
 const INITIAL_STATE = {
 	id: null,
 	userId: null,
 	mandalId: null,
-	checks: [],
+	checks: null,
 	date: null,
 	year: null,
 	month: null,
 	day: null,
+	monthLog: [],
 };
 
 const logReducers = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case FETCH_LOG:
-			return { ...action.payload };
+			return { ...state, ...action.payload };
 		case CREATE_LOG:
 			return { ...action.payload };
+		case FETCH_MONTH_LOG:
+			return { ...state, monthLog: action.payload };
 		default:
 			return state;
 	}

@@ -3,11 +3,17 @@ import {
 	CREATE_LOG,
 	FETCH_LOG,
 	FETCH_MANDAL,
+	FETCH_MONTH_LOG,
 	PATCH_LOG,
 	SIGN_IN,
 	SIGN_OUT,
 } from "../type";
-import { getDateString, getYear, getMonth, getDate } from "./getDateString";
+import {
+	getDateString,
+	getYear,
+	getMonthIndex,
+	getDate,
+} from "./getDateString";
 
 export const signIn = (userInfo) => async (dispatch) => {
 	const [userId, email, name, imagePath] = userInfo;
@@ -17,6 +23,7 @@ export const signIn = (userInfo) => async (dispatch) => {
 		name,
 		imagePath,
 	});
+	localStorage.setItem("id", data[0].id);
 	dispatch({ type: SIGN_IN, payload: data[0] });
 };
 
@@ -40,11 +47,18 @@ export const fetchLog = (userId, mandalId) => async (dispatch) => {
 	else dispatch({ type: FETCH_LOG, payload: data[0] });
 };
 
+export const fetchMonthLog = (month) => async (dispatch) => {
+	const { data } = await server.get(
+		`/checklogs?userId=${localStorage.getItem("id")}&month=${month}`
+	);
+	dispatch({ type: FETCH_MONTH_LOG, payload: data });
+};
+
 export const createLog = (userId, mandalId) => async (dispatch) => {
 	const initial_log = {
 		date: getDateString(),
 		year: getYear(),
-		month: getMonth(),
+		month: getMonthIndex(),
 		day: getDate(),
 		checks: [
 			[0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -66,7 +80,8 @@ export const createLog = (userId, mandalId) => async (dispatch) => {
 
 export const patchLog =
 	(miniMandalIndex, goalIndex, check, state) => async (dispatch) => {
-		state.checks[miniMandalIndex][goalIndex] = check;
-		const { data } = await server.put(`/checklogs`, state);
+		const { checks, monthLog, ...others } = state;
+		checks[miniMandalIndex][goalIndex] = check;
+		const { data } = await server.put(`/checklogs`, { ...others, checks });
 		dispatch({ type: PATCH_LOG, payload: data });
 	};

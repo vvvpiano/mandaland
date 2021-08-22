@@ -8,5 +8,6 @@ export const getDateString = () => {
 	return dateString;
 };
 export const getYear = () => date.getFullYear();
+export const getMonthIndex = () => date.getMonth();
 export const getMonth = () => month;
 export const getDate = () => day;

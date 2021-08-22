@@ -23,7 +23,7 @@ class Mandalart extends React.Component {
 	renderSmallGrid = (miniMandal, key_i) => {
 		const mini = miniMandal.goals.map((goal, i) => {
 			const className = i === 4 ? "goal keyword" : "goal";
-			const check = this.props.log ? this.props.log.checks[key_i][i] : 0;
+			const check = this.props.log.checks ? this.props.log.checks[key_i][i] : 0;
 			const onCheckCallback = i === 4 ? null : this.onCheck;
 			return (
 				<GoalCheck
