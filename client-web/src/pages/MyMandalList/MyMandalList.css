@@ -1,20 +1,19 @@
 body {
 	overflow-x: hidden;
 }
-.tempNav {
-	width: 280px;
-	min-width: 102px;
-	height: 100vh;
-	background-color: #000;
-}
-.mandalSmallList {
-	width: calc(100% - 280px);
-	margin: 0 auto;
-	padding: 52px 80px;
+.mandalSmallList{
+    width: calc(100% - 280px);
 }
 .wrapMandallist {
-	margin-top: 80px;
-	display: flex;
+    display: flex;
+}
+.myText {
+    border-left: 1px solid #707070;
+    font-size: 20px;
+    padding: 0 34px;
+    top: calc(50% - 15px);
+    position: relative;
+    left: 18px;
 }
 .fourMandals {
 	display: flex;
