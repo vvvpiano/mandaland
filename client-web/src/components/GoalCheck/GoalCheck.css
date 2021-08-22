@@ -13,6 +13,10 @@
 	cursor: default;
 }
 
+.center-mandal .goal {
+	cursor: default;
+}
+
 .center-mandal .goal.keyword {
 	background-color: #969696;
 }

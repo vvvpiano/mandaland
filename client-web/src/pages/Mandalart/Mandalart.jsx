@@ -24,7 +24,7 @@ class Mandalart extends React.Component {
 		const mini = miniMandal.goals.map((goal, i) => {
 			const className = i === 4 ? "goal keyword" : "goal";
 			const check = this.props.log.checks ? this.props.log.checks[key_i][i] : 0;
-			const onCheckCallback = i === 4 ? null : this.onCheck;
+			const onCheckCallback = key_i === 4 || i === 4 ? null : this.onCheck;
 			return (
 				<GoalCheck
 					isCheck={check}
