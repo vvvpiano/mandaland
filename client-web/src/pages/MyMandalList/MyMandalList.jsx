@@ -1,14 +1,11 @@
 import React from 'react';
 import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox'
-import '../../components/reset.css'
-import '../../components/common.css'
 import './MyMandalList.css'
 
 const MyMandalList = () => {
     
     return (
         <div className="wrapMandallist">
-            <nav className="tempNav">nav area</nav>
             <section className="mandalSmallList">
                 <div className="wrapModal">
                 <nav className="mandalViewChanger">

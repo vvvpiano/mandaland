@@ -1,19 +1,10 @@
 body {
     overflow-x: hidden;
 }
-.tempNav {
-    width: 280px;
-    min-width: 102px;
-    height: 100vh;
-    background-color: #000;
-}
 .mandalSmallList{
     width: calc(100% - 280px);
-    margin: 0 auto;
-    padding: 52px 80px
 }
 .wrapMandallist {
-    margin-top:80px;
     display: flex;
 }
 .myText {
@@ -48,8 +39,6 @@ body {
     border: 5px solid #000;
     width: 375px;
     height: 50px;
-    /* position: relative; */
-    /* left: 35px; */
     padding: 0 30px;
     box-sizing: border-box;
 }
