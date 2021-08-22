@@ -3,7 +3,6 @@
     max-width: 285px;
     border: 3px solid #707070;
 }
-
 .miniMandal {
     background: #ffffff;
 }
@@ -21,6 +20,26 @@
 }
 .miniMandal li:last-child {
     height: 66px;
+    background-color: #fff;
+}
+.smallMandalBox {
+    min-width: 135px;
+    max-width: 135px;
+    border: 3px solid #707070;
+}
+.smallMandal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.smallMandal li:first-child {
+    height: 120px;
+    background-color: #f0f0f0;
+    border-bottom: 3px solid #707070;
+    overflow:hidden;
+}
+.smallMandal li:last-child {
+    height: 30px;
     background-color: #fff;
 }
 .mandalThumNail {

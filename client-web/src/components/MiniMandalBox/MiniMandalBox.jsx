@@ -4,7 +4,7 @@ import './MiniMandalBox.css'
 
 const MiniMandalBox = (props) => {
     return (
-        <div className="miniMandalBox miniMandal">
+        <div className={`${props.size}MandalBox ${props.size}Mandal`}>
             {/* <Link to="/mymandal" > */}
                 <ul>
                     <li>
@@ -14,7 +14,7 @@ const MiniMandalBox = (props) => {
                     <li>
                         <div className="textTitleDate">
                             <span>{props.title}</span>
-                            <span>{props.startDate} ~ {props.endDate}</span>
+                            {props.startDate != null && <span>{props.startDate} ~ {props.endDate}</span>}
                         </div>
                     </li>
                 </ul>

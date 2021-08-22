@@ -1,10 +1,6 @@
 body {
     overflow-x: hidden;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> f41cd398c77eff450968f5eb71ba9fb6b90fb3f6
 .mandalSmallList{
     width: calc(100% - 280px);
 }
@@ -31,6 +27,7 @@ body {
     margin: 20px 35px;
     /* margin-right: 70px; */
 }
+
 .mandalsTitle {
     font-size: 22px;
     font-weight: 600;
@@ -63,7 +60,7 @@ body {
     height: 744px;
     /* height: 70vh; */
     border: 4px solid #707070;
-    box-shadow: 57px 48px 1px #969696;
+    box-shadow: 29px 24px 1px #969696;
     margin-top:55px;
     padding: 36px 43px;
     grid-template-columns: 1.2fr 1.2fr 1fr; 
@@ -75,7 +72,7 @@ body {
 	grid-row-start: 1;
 	grid-row-end: 2;
     border: 4px solid #707070;
-    box-shadow: 25px 25px 1px #969696;
+    box-shadow: 15px 15px 0px #969696;
     margin: 0 40px 50px 0;
     
     /* background-color: red; */
@@ -89,19 +86,63 @@ body {
 	grid-column-end: 4;
 	grid-row-start: 1;
 	grid-row-end: 2;
-    background-color: blue;
+    border: 4px solid #707070;
+    margin-bottom: 50px;
+    padding: 12px 34px;
+
+    /* background-color: blue; */
+}
+.monthlyTitle {
+    font-size: 20px;
+    font-weight: 800;
 }
 .gridItem:nth-child(3) {
 	grid-column-start: 1;
 	grid-column-end: 3;
 	grid-row-start: 2;
 	grid-row-end: 3;
-    background-color: green;
+    /* background-color: green; */
+}
+.currentMandals {
+    display: flex;
+    justify-content: flex-start;
+    width: 90rem;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.currentMandals > div {
+    margin: 30px 40px 0 0;
+    /* margin-right: 70px; */
+}
+.currentMandalTitle  {
+    display: inline-block;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+}
+.finishedMandalTitle {
+    display: inline-block;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 5%;
 }
 .gridItem:nth-child(4) {
 	grid-column-start: 3;
 	grid-column-end: 4;
 	grid-row-start: 2;
 	grid-row-end: 3;
-    background-color: yellow;
+    /* background-color: yellow; */
+}
+.finishedMandals {
+    display: flex;
+    /* justify-content: flex-start;
+    width: 90rem;
+    margin: 0 auto; */
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.finishedMandals > div {
+    margin-top: 30px;
+    margin-right:20px;
 }

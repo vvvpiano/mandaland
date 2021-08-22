@@ -21,29 +21,26 @@ const MyMandalList = () => {
                         <div></div>
                     </article>
                     <article className="gridItem">
-
+                        <h3 className="monthlyTitle">Monthly Activity</h3>
+                    </article>
+                    {/* <h3 >진행 중인 만다라트(3)</h3> */}
+                    <article className="gridItem">
+                        <h3 className="currentMandalTitle">진행 중인 만다라트({`${currentMandalArr.length}`})</h3>
+                        <div className="currentMandals">
+                            {currentMandalArr.map((mandal) => {
+                                return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}/>   
+                            })} 
+                        </div>
                     </article>
                     <article className="gridItem">
-
-                    </article>
-                    <article className="gridItem">
-
+                        <h3 className="finishedMandalTitle">완료된 만다라트({`${finishedMandalArr.length}`})</h3>
+                        <div className="finishedMandals">
+                            {finishedMandalArr.map((mandal) => {
+                                return <MiniMandalBox key={mandal.id} size="small" title={mandal.title} />   
+                            })} 
+                        </div>
                     </article>
                 </section>
-                {/* <article className="fourMandals">
-                    <h3 className="mandalsTitle">진행 중인 만다라트</h3>
-
-                    {currentMandalArr.map((mandal) => {
-                        return <MiniMandalBox key={mandal.id} title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}/>   
-                    })} 
-                </article>
-                <article className="fourMandals">
-                    <h3 className="mandalsTitle">완료된 만다라트</h3>
-
-                    {finishedMandalArr.map((mandal) => {
-                        return <MiniMandalBox key={mandal.id} title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}/>   
-                    })} 
-                </article> */}
                 </div>
             </section>
         </div>
@@ -69,24 +66,24 @@ const currentMandalArr = [
         "startDate":"2021.04.03",
         "endDate":""
     },
-    {   
-        "id":4,
-        "title":'2021년의 나 오주연은 어떤 사람이 될까요?!!!',
-        "startDate":"2021.08.19",
-        "endDate":"2022.10.19"
-    },
-    {
-        "id":5,
-        "title":'민영쓰 추천알고리즘 빠이팅',
-        "startDate":"2021.03.03",
-        "endDate":"2022.10.19"
-    },
-    {
-        "id":6,
-        "title":'긍정적인 삶',
-        "startDate":"2021.04.03",
-        "endDate":""
-    },
+    // {   
+    //     "id":4,
+    //     "title":'2021년의 나 오주연은 어떤 사람이 될까요?!!!',
+    //     "startDate":"2021.08.19",
+    //     "endDate":"2022.10.19"
+    // },
+    // {
+    //     "id":5,
+    //     "title":'민영쓰 추천알고리즘 빠이팅',
+    //     "startDate":"2021.03.03",
+    //     "endDate":"2022.10.19"
+    // },
+    // {
+    //     "id":6,
+    //     "title":'긍정적인 삶',
+    //     "startDate":"2021.04.03",
+    //     "endDate":""
+    // },
 
 ]
 
