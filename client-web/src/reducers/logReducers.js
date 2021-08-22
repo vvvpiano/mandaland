@@ -17,7 +17,7 @@ const logReducers = (state = INITIAL_STATE, action) => {
         case FETCH_LOG:
             return { ...state, ...action.payload }
         case CREATE_LOG:
-            return { ...action.payload }
+            return { ...state, ...action.payload }
         case FETCH_MONTH_LOG:
             return { ...state, monthLog: action.payload }
         default:

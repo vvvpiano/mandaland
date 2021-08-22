@@ -55,11 +55,12 @@ class NavMonthly extends React.Component {
     }
 
     renderDayTileColor = (day) => {
-        if (!this.props.log.monthLog) return {}
-        return this.props.log.monthLog[day] ? { backgroundColor: calculateColor(this.props.log.monthLog[day]) } : {}
+        if (!this.props.log.monthLog || !this.props.log.monthLog[day]) return {}
+        return { backgroundColor: calculateColor(this.props.log.monthLog[day]) }
     }
 
     renderTiles = (days) => {
+        console.log(this.props.log)
         const emptyArray = Array(this.state.theFirst.getDay()).fill(" ")
         const daysArray = Array.from({ length: days }, (_, i) => i + 1)
         return (
