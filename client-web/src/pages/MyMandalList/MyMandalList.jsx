@@ -1,29 +1,38 @@
 import React from 'react';
 import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox'
+import { connect } from 'react-redux';
 import './MyMandalList.css'
 
-const MyMandalList = () => {
-    
+const MyMandalList = (props) => {
     return (
         <div className="wrapMandallist">
             <section className="mandalSmallList">
                 <div className="wrapModal">
                 <nav className="mandalViewChanger">
                     <select name="" id="" className="plannerSelectBox">
-                            <option value="">MANDALPLAN</option>
-                            <option value="">MANDAL2</option>
+                        <option value="">MANDALPLAN</option>
+                        <option value="">MANDAL2</option>
                     </select>
                     <span className="myText">MY</span>
                 </nav>
                 <section className="gridContainer">
+                    {/* 1. profile */}
                     <article className="gridItem">
-                        <div className="myMiniProfile"></div>
-                        <div></div>
+                        <div className="myMiniProfile">
+                            <img src={props.user.imagePath === null ? window.location.origin+'/icons/user.svg': props.user.imagePath.replace("=s96-c", "")} alt="" className="profileImg"/>
+                            <h2 className="userName">{props.user.name}</h2>
+                            <h3 class="userEmail">{props.user.email}</h3>
+                        </div>
+                        <div className="myMandalResolution">
+                            {/* TO DO: modify user DB -> {props.user.resolution} */}
+                            “ 하루하루를 성실하게 보내고 싶은 개발자입니다. ”
+                        </div>
                     </article>
+                    {/* 2. Monthly Activity */}
                     <article className="gridItem">
                         <h3 className="monthlyTitle">Monthly Activity</h3>
                     </article>
-                    {/* <h3 >진행 중인 만다라트(3)</h3> */}
+                    {/* 3. 진행중인 만다라트 */}
                     <article className="gridItem">
                         <h3 className="currentMandalTitle">진행 중인 만다라트({`${currentMandalArr.length}`})</h3>
                         <div className="currentMandals">
@@ -32,6 +41,7 @@ const MyMandalList = () => {
                             })} 
                         </div>
                     </article>
+                    {/* 4. 완료된 만다라트 */}
                     <article className="gridItem">
                         <h3 className="finishedMandalTitle">완료된 만다라트({`${finishedMandalArr.length}`})</h3>
                         <div className="finishedMandals">
@@ -66,25 +76,6 @@ const currentMandalArr = [
         "startDate":"2021.04.03",
         "endDate":""
     },
-    // {   
-    //     "id":4,
-    //     "title":'2021년의 나 오주연은 어떤 사람이 될까요?!!!',
-    //     "startDate":"2021.08.19",
-    //     "endDate":"2022.10.19"
-    // },
-    // {
-    //     "id":5,
-    //     "title":'민영쓰 추천알고리즘 빠이팅',
-    //     "startDate":"2021.03.03",
-    //     "endDate":"2022.10.19"
-    // },
-    // {
-    //     "id":6,
-    //     "title":'긍정적인 삶',
-    //     "startDate":"2021.04.03",
-    //     "endDate":""
-    // },
-
 ]
 
 const finishedMandalArr = [
@@ -113,6 +104,8 @@ const finishedMandalArr = [
         "endDate":"2007.10.19"
     },
 ]
+const mapStateToProps = (state) => {
+    return {user: state.user}
+}
 
-
-export default MyMandalList
+export default connect(mapStateToProps)(MyMandalList);

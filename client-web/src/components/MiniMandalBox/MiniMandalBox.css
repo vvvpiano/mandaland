@@ -47,11 +47,12 @@
     margin: auto;
     text-align: center;
 }
-.textTitleDate {
+.miniMandal .textTitleDate {
     display: flex;
     flex-direction: column;
     padding: 18px;
 }
+
 .textTitleDate span:first-child {
     font-size: 16px;
     font-weight: 600;
@@ -63,3 +64,24 @@
 .textTitleDate span:last-child {
     font-size: 14px;
 }
+.smallMandal .textTitleDate {
+    display: flex;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+.smallMandal .textTitleDate {
+    display: flex;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+.smallMandal .textTitleDate span:first-child {
+    margin-bottom: 0;
+}
+
+/* monthly activity */

@@ -23,7 +23,7 @@ class LoginButton extends React.Component {
                 this.auth.currentUser.get().getId(),
                 this.auth.currentUser.get().getBasicProfile().getEmail(),
                 this.auth.currentUser.get().getBasicProfile().getGivenName(),
-                this.auth.currentUser.get().getBasicProfile().getImageUrl()
+                this.auth.currentUser.get().getBasicProfile().getImageUrl().replace("=s96-c", "")
             ]
             this.props.signIn(
                 userInfo
