@@ -2,6 +2,7 @@ import React from "react"
 import MiniMandalBox from "../../components/MiniMandalBox/MiniMandalBox"
 import { connect } from "react-redux"
 import MandalViewChanger from "../../components/MandalViewChanger/MandalViewChanger"
+import MonthlyProgress from "../../components/MonthlyProgress/MonthlyProgress"
 import "./MyMandalList.css"
 
 const MyMandalList = (props) => {
@@ -22,7 +23,12 @@ const MyMandalList = (props) => {
                         </article>
                         {/* 2. Monthly Activity */}
                         <article className="gridItem">
-                            <h3 className="monthlyTitle">Monthly Activity</h3>
+                            <h3 className="monthlyTitle english">Monthly Activity</h3>
+                            <div className="progressAlign">
+                                {monthlyActivityData.map((each)=>{
+                                    return <MonthlyProgress month={each.month} progress={each.progress}/>
+                                })}
+                            </div>
                         </article>
                         {/* 3. 진행중인 만다라트 */}
                         <article className="gridItem">
@@ -49,6 +55,56 @@ const MyMandalList = (props) => {
     )
 }
 // dummy for mandals table
+const monthlyActivityData = [
+    {
+        month: "Jan",
+        progress: 90,
+    },
+    {
+        month: "Feb",
+        progress: 80,
+    },
+    {
+        month: "Mar",
+        progress: 100,
+    },
+    {
+        month: "Apr",
+        progress: 70,
+    },
+    {
+        month: "May",
+        progress: 10,
+    },
+    {
+        month: "Jun",
+        progress: 50,
+    },
+    {
+        month: "Jul",
+        progress: 30,
+    },
+    {
+        month: "Aug",
+        progress: 20,
+    },
+    {
+        month: "Sep",
+        progress: 90,
+    },
+    {
+        month: "Oct",
+        progress: 50,
+    },
+    {
+        month: "Nov",
+        progress: 60,
+    },
+    {
+        month: "Dec",
+        progress: 90,
+    },
+]
 const currentMandalArr = [
     {
         id: 1,
