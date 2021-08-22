@@ -1,7 +1,7 @@
-const axios = require('axios');
+const axios = require("axios")
 
 const db = axios.create({
-    baseURL: "http://localhost:4001"
+    baseURL: "http://localhost:4001",
 })
 
-module.exports = db;
+module.exports = db

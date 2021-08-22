@@ -1,43 +1,43 @@
 .mandalart-container {
-	border: 3px solid #707070;
+    border: 3px solid #707070;
 }
 
 .description-container {
-	margin: 0 17px;
+    margin: 0 17px;
 }
 
 .devider {
-	height: 1px;
-	background-color: #707070;
+    height: 1px;
+    background-color: #707070;
 }
 
 .title {
-	padding: 17px 0;
+    padding: 17px 0;
 }
 
 .contents {
-	padding: 17px 0;
+    padding: 17px 0;
 }
 
 .mandal-big-grid {
-	display: grid;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
-	border-top: 3px solid #707070;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: 3px solid #707070;
 }
 
 .mini-container {
-	display: grid;
-	box-sizing: border-box;
-	grid-template-rows: 1fr 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    box-sizing: border-box;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 
-	column-gap: 1px;
-	row-gap: 1px;
+    column-gap: 1px;
+    row-gap: 1px;
 }
 
 .button-wrapper {
-	margin-top: 33px;
-	display: flex;
-	justify-content: flex-end;
+    margin-top: 33px;
+    display: flex;
+    justify-content: flex-end;
 }

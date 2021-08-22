@@ -1,22 +1,22 @@
 .goal {
-	width: 111px;
-	height: 68px;
-	text-align: center;
-	line-height: 65px;
+    width: 111px;
+    height: 68px;
+    text-align: center;
+    line-height: 65px;
 
-	box-shadow: 0 0 0 1px #707070;
-	cursor: pointer;
+    box-shadow: 0 0 0 1px #707070;
+    cursor: pointer;
 }
 
 .goal.keyword {
-	background-color: #f0f0f0;
-	cursor: default;
+    background-color: #f0f0f0;
+    cursor: default;
 }
 
 .center-mandal .goal {
-	cursor: default;
+    cursor: default;
 }
 
 .center-mandal .goal.keyword {
-	background-color: #969696;
+    background-color: #969696;
 }

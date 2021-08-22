@@ -1,26 +1,26 @@
 .mandalViewChanger {
-	border: 5px solid #000;
-	width: 375px;
-	height: 50px;
-	/* position: relative; */
-	/* left: 35px; */
-	padding: 0 30px;
-	box-sizing: border-box;
+    border: 5px solid #000;
+    width: 375px;
+    height: 50px;
+    /* position: relative; */
+    /* left: 35px; */
+    padding: 0 30px;
+    box-sizing: border-box;
 }
 .plannerSelectBox {
-	width: 196px;
-	height: 26px;
-	border: none;
-	font-size: 24px;
-	font-weight: 800;
-	top: calc(50% - 13px);
-	position: relative;
+    width: 196px;
+    height: 26px;
+    border: none;
+    font-size: 24px;
+    font-weight: 800;
+    top: calc(50% - 13px);
+    position: relative;
 }
 .myText {
-	border-left: 1px solid #707070;
-	font-size: 20px;
-	padding: 0 34px;
-	top: calc(50% - 15px);
-	position: relative;
-	left: 18px;
+    border-left: 1px solid #707070;
+    font-size: 20px;
+    padding: 0 34px;
+    top: calc(50% - 15px);
+    position: relative;
+    left: 18px;
 }

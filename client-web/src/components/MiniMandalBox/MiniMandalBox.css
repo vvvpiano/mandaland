@@ -16,7 +16,6 @@
     height: 285px;
     background-color: #f0f0f0;
     border-bottom: 3px solid #707070;
-
 }
 .miniMandal li:last-child {
     height: 66px;
@@ -36,7 +35,7 @@
     height: 120px;
     background-color: #f0f0f0;
     border-bottom: 3px solid #707070;
-    overflow:hidden;
+    overflow: hidden;
 }
 .smallMandal li:last-child {
     height: 30px;
