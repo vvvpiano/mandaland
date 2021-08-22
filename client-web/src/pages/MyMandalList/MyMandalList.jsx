@@ -1,5 +1,7 @@
 import React from 'react';
-import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox'
+import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox';
+import MandalViewChanger from '../../components/MandalViewChanger/MandalViewChanger';
+import '../../components/common.css'
 import './MyMandalList.css'
 
 const MyMandalList = () => {
@@ -8,13 +10,7 @@ const MyMandalList = () => {
         <div className="wrapMandallist">
             <section className="mandalSmallList">
                 <div className="wrapModal">
-                <nav className="mandalViewChanger">
-                    <select name="" id="" className="plannerSelectBox">
-                            <option value="">MANDALPLAN</option>
-                            <option value="">MANDAL2</option>
-                    </select>
-                    <span className="myText">MY</span>
-                </nav>
+                <MandalViewChanger />
                 <article className="fourMandals">
                     <h3 className="mandalsTitle">진행 중인 만다라트</h3>
 
