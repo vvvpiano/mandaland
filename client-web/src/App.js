@@ -6,6 +6,7 @@ import Header from "./components/Header/Header"
 import Navbar from "./components/Navbar/Navbar"
 import Mandalart from "./pages/Mandalart/Mandalart"
 import MyMandalList from "./pages/MyMandalList/MyMandalList"
+import FeedBeforeLogin from "./pages/FeedBeforeLogin/FeedBeforeLogin"
 import Three from "./pages/Three"
 
 import "./components/reset.css"
@@ -26,6 +27,7 @@ function App() {
                             <Route path="/" exact component={Main} />
                             <Route path="/mandalplan" exact component={MyMandalList} />
                             <Route path="/mandalart/:userId/:mandalId" exact component={Mandalart} />
+                            <Route path="/feed" exact component={FeedBeforeLogin} />
                             <Route path="/three" exact component={Three} />
                         </div>
                     </Switch>
