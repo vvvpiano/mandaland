@@ -3,7 +3,6 @@
     max-width: 285px;
     border: 3px solid #707070;
 }
-
 .miniMandal {
     background: #ffffff;
 }
@@ -23,16 +22,37 @@
     height: 66px;
     background-color: #fff;
 }
+.smallMandalBox {
+    min-width: 135px;
+    max-width: 135px;
+    border: 3px solid #707070;
+}
+.smallMandal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.smallMandal li:first-child {
+    height: 120px;
+    background-color: #f0f0f0;
+    border-bottom: 3px solid #707070;
+    overflow:hidden;
+}
+.smallMandal li:last-child {
+    height: 30px;
+    background-color: #fff;
+}
 .mandalThumNail {
     width: 100%;
     margin: auto;
     text-align: center;
 }
-.textTitleDate {
+.miniMandal .textTitleDate {
     display: flex;
     flex-direction: column;
     padding: 18px;
 }
+
 .textTitleDate span:first-child {
     font-size: 16px;
     font-weight: 600;
@@ -44,3 +64,24 @@
 .textTitleDate span:last-child {
     font-size: 14px;
 }
+.smallMandal .textTitleDate {
+    display: flex;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+.smallMandal .textTitleDate {
+    display: flex;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+.smallMandal .textTitleDate span:first-child {
+    margin-bottom: 0;
+}
+
+/* monthly activity */

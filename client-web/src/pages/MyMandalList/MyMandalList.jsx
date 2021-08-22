@@ -1,30 +1,51 @@
 import React from 'react';
-import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox';
+import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox'
+import { connect } from 'react-redux';
 import MandalViewChanger from '../../components/MandalViewChanger/MandalViewChanger';
-import '../../components/common.css'
 import './MyMandalList.css'
 
-const MyMandalList = () => {
-    
+const MyMandalList = (props) => {
     return (
         <div className="wrapMandallist">
             <section className="mandalSmallList">
                 <div className="wrapModal">
                 <MandalViewChanger />
-                <article className="fourMandals">
-                    <h3 className="mandalsTitle">진행 중인 만다라트</h3>
-
-                    {currentMandalArr.map((mandal) => {
-                        return <MiniMandalBox key={mandal.id} title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}/>   
-                    })} 
-                </article>
-                <article className="fourMandals">
-                    <h3 className="mandalsTitle">완료된 만다라트</h3>
-
-                    {finishedMandalArr.map((mandal) => {
-                        return <MiniMandalBox key={mandal.id} title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}/>   
-                    })} 
-                </article>
+                <section className="gridContainer">
+                    {/* 1. profile */}
+                    <article className="gridItem">
+                        <div className="myMiniProfile">
+                            <img src={props.user.imagePath === null ? window.location.origin+'/icons/user.svg': props.user.imagePath.replace("=s96-c", "")} alt="" className="profileImg"/>
+                            <h2 className="userName">{props.user.name}</h2>
+                            <h3 class="userEmail">{props.user.email}</h3>
+                        </div>
+                        <div className="myMandalResolution">
+                            {/* TO DO: modify user DB -> {props.user.resolution} */}
+                            “ 하루하루를 성실하게 보내고 싶은 개발자입니다. ”
+                        </div>
+                    </article>
+                    {/* 2. Monthly Activity */}
+                    <article className="gridItem">
+                        <h3 className="monthlyTitle">Monthly Activity</h3>
+                    </article>
+                    {/* 3. 진행중인 만다라트 */}
+                    <article className="gridItem">
+                        <h3 className="currentMandalTitle">진행 중인 만다라트({`${currentMandalArr.length}`})</h3>
+                        <div className="currentMandals">
+                            {currentMandalArr.map((mandal) => {
+                                return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}/>   
+                            })} 
+                        </div>
+                    </article>
+                    {/* 4. 완료된 만다라트 */}
+                    <article className="gridItem">
+                        <h3 className="finishedMandalTitle">완료된 만다라트({`${finishedMandalArr.length}`})</h3>
+                        <div className="finishedMandals">
+                            {finishedMandalArr.map((mandal) => {
+                                return <MiniMandalBox key={mandal.id} size="small" title={mandal.title} />   
+                            })} 
+                        </div>
+                    </article>
+                </section>
                 </div>
             </section>
         </div>
@@ -50,25 +71,6 @@ const currentMandalArr = [
         "startDate":"2021.04.03",
         "endDate":""
     },
-    {   
-        "id":4,
-        "title":'2021년의 나 오주연은 어떤 사람이 될까요?!!!',
-        "startDate":"2021.08.19",
-        "endDate":"2022.10.19"
-    },
-    {
-        "id":5,
-        "title":'민영쓰 추천알고리즘 빠이팅',
-        "startDate":"2021.03.03",
-        "endDate":"2022.10.19"
-    },
-    {
-        "id":6,
-        "title":'긍정적인 삶',
-        "startDate":"2021.04.03",
-        "endDate":""
-    },
-
 ]
 
 const finishedMandalArr = [
@@ -97,6 +99,8 @@ const finishedMandalArr = [
         "endDate":"2007.10.19"
     },
 ]
+const mapStateToProps = (state) => {
+    return {user: state.user}
+}
 
-
-export default MyMandalList
+export default connect(mapStateToProps)(MyMandalList);
