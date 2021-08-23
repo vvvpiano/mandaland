@@ -84,3 +84,41 @@
 }
 
 /* monthly activity */
+
+/* 만다라트에 유저정보 보여주는 영역 */
+.userInfoArea {
+    position: absolute;
+    background-color: #fff;
+    border-bottom: 3px solid #707070;
+    width: 245px;
+    height: 66px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.wrapUserPic {
+    display: flex;
+    flex-direction: row;
+}
+.userPic {
+    border-radius: 50%;
+    border: 2px solid #707070;
+    width: 37px;
+    height: 37px;
+    margin-right: 10px;
+}
+.userHeartArea {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.heartIcon {
+    width: 17px;
+    height: 17px;
+}
+.typography {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

@@ -4,7 +4,15 @@ import HeaderText from '../../components/Typography/HeaderText';
 import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox';
 import './FeedBeforeLogin.css'
 
-const FeedBeforeLogin = () => {
+const FeedBeforeLogin = (props) => {
+    // TO DO: remove margin
+    // const rmMargin = {
+    //     margin: 0
+    // }
+    const curMandalMarginstyle = {
+        justifyContent :"space-between",
+    }    
+    
     return (
         <div>
             <FeedTitle />
@@ -32,9 +40,9 @@ const FeedBeforeLogin = () => {
                 </article>
                 <article className="popular-section">
                     <HeaderText text="이달의 인기 만다라트"/>
-                    <div className="currentMandals">
+                    <div className="currentMandals" style={curMandalMarginstyle}>
                         {currentMandalArr.map((mandal) => {
-                            return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate} />
+                            return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate} getHeart={true} />
                         })}
                     </div>
 
@@ -70,5 +78,4 @@ const currentMandalArr = [
     },
 ]
 
-
-export default FeedBeforeLogin
+export default FeedBeforeLogin;

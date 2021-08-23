@@ -25,9 +25,3 @@
 .keyword-wrapper div {
     padding: 1rem;
 }
-.currentMandals {
-    justify-content: space-between;
-}
-.currentMandals > div {
-    margin: 0;
-}
