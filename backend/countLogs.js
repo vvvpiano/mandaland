@@ -5,5 +5,5 @@ const countLogsByDay = (checks) => {
 }
 
 module.exports = countLogs = {
-    countLogsByDay: countLogsByDay,
+    countLogsByDay,
 }

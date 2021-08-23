@@ -9,8 +9,8 @@ class Navbar extends React.Component {
     state = { open: true }
 
     dropContent = [
-        { dropTitle: "My", dropLink: "/" },
-        { dropTitle: "New", dropLink: "/" },
+        { dropTitle: "My", dropLink: "/mandalplan" },
+        { dropTitle: "New", dropLink: "/mandalplan/new" },
     ]
 
     onToggleClick = () => {

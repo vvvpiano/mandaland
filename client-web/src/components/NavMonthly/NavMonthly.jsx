@@ -28,6 +28,7 @@ class NavMonthly extends React.Component {
             displayedMonth = 11
         }
         this.setState({ theFirst: new Date(displayeYear, displayedMonth, 1) })
+        this.props.fetchMonthLog(displayedMonth)
     }
 
     onClickRight = () => {
@@ -38,6 +39,7 @@ class NavMonthly extends React.Component {
             displayedMonth = 0
         }
         this.setState({ theFirst: new Date(displayeYear, displayedMonth, 1) })
+        this.props.fetchMonthLog(displayedMonth)
     }
 
     renderMonthTitle = () => {
@@ -60,19 +62,20 @@ class NavMonthly extends React.Component {
     }
 
     renderTiles = (days) => {
-        console.log(this.props.log)
         const emptyArray = Array(this.state.theFirst.getDay()).fill(" ")
         const daysArray = Array.from({ length: days }, (_, i) => i + 1)
         return (
             <div className="tile-container">
                 {weekDay.map((day) => (
-                    <div className="weekday-tile">{day}</div>
+                    <div className="weekday-tile" key={day}>
+                        {day}
+                    </div>
                 ))}
-                {emptyArray.map(() => (
-                    <div className="day-tile empty"></div>
+                {emptyArray.map((_, i) => (
+                    <div className="day-tile empty" key={i}></div>
                 ))}
                 {daysArray.map((day) => (
-                    <div className="day-tile" style={this.renderDayTileColor(day)}>
+                    <div className="day-tile" key={day} style={this.renderDayTileColor(day)}>
                         {day}
                     </div>
                 ))}
