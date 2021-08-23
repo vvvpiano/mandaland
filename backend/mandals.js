@@ -23,7 +23,28 @@ const initiateMini = (userId, mandalId, miniData) => {
     return miniDatas
 }
 
+const initiateMiniEdit = (miniIds, miniData) => {
+    let miniDatas = []
+    for (let i = 0; i < 9; i++) miniDatas.push(new Array(9).fill(""))
+    Object.keys(miniData).forEach((pair) => {
+        const [i, j] = pair.split("-")
+        miniDatas[i][j] = miniData[pair]
+    })
+    miniDatas = miniDatas.map((goals, i) => {
+        const keyword = goals[4] ? goals[4] : ""
+        return {
+            id: miniIds[i],
+            edit_data: {
+                keyword,
+                goals,
+            },
+        }
+    })
+    return miniDatas
+}
+
 module.exports = mandals = {
     initiateMandal,
     initiateMini,
+    initiateMiniEdit,
 }

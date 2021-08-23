@@ -73,7 +73,30 @@ app.post("/mandal/create", async (req, res) => {
         res.status("201").json(data).end() // 201 == created
     } catch (err) {
         console.log(err)
-        res.sendStatus("400").json(err).end()
+        res.status("400").json(err).end()
+    }
+})
+
+app.put("/mandal/edit", async (req, res) => {
+    try {
+        console.log("PATCH /mandal/create")
+        const mandal = await db.patch(`/mandals/${req.body.mandalId}`, req.body.mandalData)
+
+        const miniDatas = mandals.initiateMiniEdit(mandal.data.miniIds, req.body.miniData)
+
+        const promises = miniDatas.map(async (mini) => {
+            return await db.patch(`/minimandals/${mini.id}`, mini.edit_data).then((res) => res.data)
+        })
+
+        const miniMandals = await Promise.all(promises)
+        const data = {
+            mandal: mandal.data,
+            miniMandals,
+        }
+        res.status("200").json(data).end()
+    } catch (err) {
+        console.log(err)
+        res.status("400").json(err).end()
     }
 })
 
