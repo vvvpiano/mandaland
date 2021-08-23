@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
-import { getUserInfoFromMandal } from "../../actions"
 import BodyText from "../Typography/BodyText"
 import "./MiniMandalBox.css"
 
