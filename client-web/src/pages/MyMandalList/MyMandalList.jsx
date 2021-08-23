@@ -74,15 +74,15 @@ const MyMandalList = (props) => {
                                     return <MonthlyProgress month={each.month} progress={each.progress}/>
                                 })}
                             </div>
-                            <button className="goMandalandBtn">
-                                <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
-                                <div className="wrapGoText">
-                                    <span className="goMandalText english">GO</span>
-                                    <img src={window.location.origin + "/icons/arrow_pink.svg"} alt="" />
-                                </div>
-                            </button>
-                        </article>
 
+                        </article>
+                        <button className="gridItem goMandalandBtn">
+                            <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
+                            <div className="wrapGoText">
+                                <span className="goMandalText english">GO</span>
+                                <img src={window.location.origin + "/icons/arrow_pink.svg"} alt="" />
+                            </div>
+                        </button>
                         {/* 3. 진행중인 만다라트 */}
                         {renderCurrentMandal()}
 
