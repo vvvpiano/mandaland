@@ -28,6 +28,7 @@ class NavMonthly extends React.Component {
             displayedMonth = 11
         }
         this.setState({ theFirst: new Date(displayeYear, displayedMonth, 1) })
+        this.props.fetchMonthLog(displayedMonth)
     }
 
     onClickRight = () => {
@@ -38,6 +39,7 @@ class NavMonthly extends React.Component {
             displayedMonth = 0
         }
         this.setState({ theFirst: new Date(displayeYear, displayedMonth, 1) })
+        this.props.fetchMonthLog(displayedMonth)
     }
 
     renderMonthTitle = () => {
