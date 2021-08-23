@@ -3,6 +3,7 @@ const app = express()
 const bodyParser = require("body-parser")
 const db = require("./dbServer")
 const countLogs = require("./countLogs")
+const mandals = require("./mandals")
 
 app.use(bodyParser.json())
 
@@ -13,6 +14,8 @@ app.use(function (req, res, next) {
 })
 
 app.get("/", (req, res) => {})
+
+// USERS
 
 app.post("/login/google", async (req, res) => {
     try {
@@ -33,6 +36,8 @@ app.post("/login/google", async (req, res) => {
     }
 })
 
+// MANDALS
+
 app.get("/mandal", async (req, res) => {
     try {
         console.log(`GET /mandal?id=${req.query.id}`)
@@ -48,6 +53,31 @@ app.get("/mandal", async (req, res) => {
         res.status("400").json(err).end()
     }
 })
+
+app.post("/mandal/create", async (req, res) => {
+    try {
+        console.log("POST /mandal/create")
+        const mandalInitialData = mandals.initiateMandal(req.body.userId, req.body.mandalData)
+        const mandalData = await db.post(`/mandals`, mandalInitialData)
+        const miniDatas = mandals.initiateMini(req.body.userId, mandalData.data.id, req.body.miniData)
+        const promises = miniDatas.map(async (data) => {
+            return await db.post("/minimandals", data).then((res) => res.data)
+        })
+        const miniMandals = await Promise.all(promises)
+        const miniIds = miniMandals.map((miniMandal) => miniMandal.id)
+        const mandal = await db.patch(`/mandals/${mandalData.data.id}`, { ...mandalData.data, miniIds })
+        const data = {
+            mandal: mandal.data,
+            miniMandals,
+        }
+        res.status("201").json(data).end() // 201 == created
+    } catch (err) {
+        console.log(err)
+        res.sendStatus("400").json(err).end()
+    }
+})
+
+// CHECKLOGS
 
 app.get("/checklog", async (req, res) => {
     try {

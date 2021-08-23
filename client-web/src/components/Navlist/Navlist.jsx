@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import "./Navlist.css"
 
 const Navlist = ({ title, iconPath, aLink, dropContent, open }) => {
@@ -36,6 +37,7 @@ const Navlist = ({ title, iconPath, aLink, dropContent, open }) => {
         if (!drop || !isDropable) return null
         const navlists = dropContent.map((info) => {
             const { dropTitle, dropLink } = info
+            console.log(dropTitle, dropLink)
             return <Navlist title={dropTitle} open={open} aLink={dropLink} />
         })
         return <div className="dropdown-list-container">{navlists}</div>
@@ -47,11 +49,11 @@ const Navlist = ({ title, iconPath, aLink, dropContent, open }) => {
                 <div className="navlist-container">
                     <div className="navlist-flex-container">
                         {renderIconImage()}
-                        <a className="navlist-link-wrapper" href={aLink} style={renderWrapperStyle()}>
+                        <Link to={aLink} className="navlist-link-wrapper" to={aLink} style={renderWrapperStyle()}>
                             <div className="navlist-link" style={renderLinkStyle()}>
                                 {title}
                             </div>
-                        </a>
+                        </Link>
                         {renderDropButton()}
                     </div>
                 </div>

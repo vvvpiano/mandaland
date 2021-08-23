@@ -1,6 +1,9 @@
 import server from "../apis/server"
-import { CREATE_LOG, FETCH_LOG, FETCH_MANDAL, FETCH_MONTH_LOG, PATCH_LOG, SIGN_IN, SIGN_OUT } from "../type"
+import history from "../history"
+import { CREATE_LOG, CREATE_MANDAL, FETCH_LOG, FETCH_MANDAL, FETCH_MONTH_LOG, PATCH_LOG, SIGN_IN, SIGN_OUT } from "../type"
 import { getDateString, getYear, getMonthIndex, getDate } from "./getDateString"
+
+// USERS
 
 export const signIn = (userInfo) => async (dispatch) => {
     const [userId, email, name, imagePath] = userInfo
@@ -20,10 +23,23 @@ export const signOut = () => {
     }
 }
 
+// MANDALS
+
 export const fetchMandal = (mandalId) => async (dispatch) => {
     const { data } = await server.get(`/mandal?id=${mandalId}`)
     dispatch({ type: FETCH_MANDAL, payload: data })
 }
+
+export const createMandal = (mandalData, miniData) => async (dispatch) => {
+    console.log("create Mandal")
+    const userId = localStorage.getItem("id")
+    const { data } = await server.post("/mandal/create", { userId, mandalData, miniData })
+    console.log("created", data)
+    dispatch({ type: CREATE_MANDAL, payload: data })
+    history.push(`/mandalart/${userId}/${data.mandal.id}`)
+}
+
+// CHECKLOGS
 
 export const fetchLog = (userId, mandalId) => async (dispatch) => {
     const dateString = getDateString()

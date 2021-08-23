@@ -71,9 +71,9 @@ class Mandalart extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        mandal: state.mandal,
+        mandal: state.mandal[ownProps.match.params.mandalId],
         log: state.log,
     }
 }
