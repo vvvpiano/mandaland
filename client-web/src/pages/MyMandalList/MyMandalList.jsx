@@ -12,7 +12,35 @@ const MyMandalList = (props) => {
     useEffect(() => { 
         props.getMandal(id)
     }, [])
+    const renderCurrentProfile = () => {
+        return (
+            <article className="gridItem">
+                <div className="myMiniProfile">
+                    <img src={props.user.imagePath === null ? window.location.origin + "/icons/user.svg" : props.user.imagePath.replace("=s96-c", "")} alt="" className="profileImg" />
+                    <h2 className="userName">{props.user.name}</h2>
+                    <h3 class="userEmail">{props.user.email}</h3>
+                </div>
+                    <div className="myMandalResolution">{/* TO DO: modify user DB -> {props.user.resolution} */}“ 하루하루를 성실하게 보내고 싶은 개발자입니다. ”</div>
+            </article>
+        )
+    }
 
+    // const renderMonthlyActivity = () => {
+    //     return (
+    //         <article className="gridItem">
+    //             <h3 className="monthlyTitle english">Monthly Activity</h3>
+    //             <div className="progressAlign">
+    //                 {monthlyActivityData.map((each)=>{
+    //                     return <MonthlyProgress month={each.month} progress={each.progress}/>
+    //                 })}
+    //             </div>
+    //             <div className="goMandalandBtn">
+    //                 <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
+    //                 <span className="goMandalText english">GO</span>
+    //             </div>
+    //         </article>
+    //     )
+    // }
     const renderCurrentMandal = () => {
         if(props.mandalarts == null) {
             return <div />
@@ -36,25 +64,28 @@ const MyMandalList = (props) => {
                     <MandalViewChanger />
                     <section className="gridContainer">
                         {/* 1. profile */}
-                        <article className="gridItem">
-                            <div className="myMiniProfile">
-                                <img src={props.user.imagePath === null ? window.location.origin + "/icons/user.svg" : props.user.imagePath.replace("=s96-c", "")} alt="" className="profileImg" />
-                                <h2 className="userName">{props.user.name}</h2>
-                                <h3 class="userEmail">{props.user.email}</h3>
-                            </div>
-                            <div className="myMandalResolution">{/* TO DO: modify user DB -> {props.user.resolution} */}“ 하루하루를 성실하게 보내고 싶은 개발자입니다. ”</div>
-                        </article>
+                        {renderCurrentProfile()}
+
                         {/* 2. Monthly Activity */}
-                        <article className="gridItem">
+                        <article className="gridItem makeMargin">
                             <h3 className="monthlyTitle english">Monthly Activity</h3>
                             <div className="progressAlign">
                                 {monthlyActivityData.map((each)=>{
                                     return <MonthlyProgress month={each.month} progress={each.progress}/>
                                 })}
                             </div>
+                            <button className="goMandalandBtn">
+                                <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
+                                <div className="wrapGoText">
+                                    <span className="goMandalText english">GO</span>
+                                    <img src={window.location.origin + "/icons/arrow_pink.svg"} alt="" />
+                                </div>
+                            </button>
                         </article>
+
                         {/* 3. 진행중인 만다라트 */}
                         {renderCurrentMandal()}
+
                         {/* 4. 완료된 만다라트 */}
                         <article className="gridItem">
                             <h3 className="finishedMandalTitle">완료된 만다라트({`${finishedMandalArr.length}`})</h3>
