@@ -1,14 +1,13 @@
-import { FETCH_MANDAL } from "../type"
+import { CREATE_MANDAL, EDIT_MANDAL, FETCH_MANDAL } from "../type"
 
-const INITIAL_STATE = {
-    mandal: null,
-    miniMandals: null,
-}
-
-const mandalReducers = (state = INITIAL_STATE, action) => {
+const mandalReducers = (state = [], action) => {
     switch (action.type) {
         case FETCH_MANDAL:
-            return { ...action.payload }
+            return { ...state, [action.payload.mandal.id]: action.payload }
+        case CREATE_MANDAL:
+            return { ...state, [action.payload.mandal.id]: action.payload }
+        case EDIT_MANDAL:
+            return { ...state, [action.payload.mandal.id]: action.payload }
         default:
             return state
     }
