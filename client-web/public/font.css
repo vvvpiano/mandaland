@@ -43,3 +43,11 @@
     src: url("/font/AppleSd/AppleSDGothicNeoH.ttf") format("truetype");
     font-weight: 800;
 }
+@font-face {
+    font-family: DungGeunMo;
+    src: url("/font/Neodgm/neodgm.ttf");
+}
+@font-face {
+    font-family: DungGeunMo-Code;
+    src: url();
+}
