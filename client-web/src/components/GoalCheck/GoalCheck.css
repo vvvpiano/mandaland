@@ -4,12 +4,13 @@
     text-align: center;
     line-height: 65px;
 
+    background-color: white;
     box-shadow: 0 0 0 1px #707070;
     cursor: pointer;
 }
 
 .goal.keyword {
-    background-color: #f0f0f0;
+    background-color: #fef7d8;
     cursor: default;
 }
 
@@ -18,5 +19,7 @@
 }
 
 .center-mandal .goal.keyword {
-    background-color: #969696;
+    background-color: black;
+    color: white;
+    font-weight: bold;
 }

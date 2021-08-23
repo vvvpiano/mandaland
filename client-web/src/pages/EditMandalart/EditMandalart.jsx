@@ -1,9 +1,9 @@
 import React from "react"
-import _ from "lodash"
 import { connect } from "react-redux"
-import MandalViewChanger from "../../components/MandalViewChanger/MandalViewChanger"
 import { fetchMandal, editMandal } from "../../actions"
+import MandalViewChanger from "../../components/MandalViewChanger/MandalViewChanger"
 import MandalForm from "../../components/MandalForm/MandalForm"
+import KeywordSearch from "../../components/KeywordSearch/KeywordSearch"
 
 class EditMandalart extends React.Component {
     componentDidMount = () => {
@@ -38,9 +38,12 @@ class EditMandalart extends React.Component {
 
     render() {
         return (
-            <div>
-                <MandalViewChanger />
-                {this.renderForm()}
+            <div className="form-page-container">
+                <div>
+                    <MandalViewChanger />
+                    {this.renderForm()}
+                </div>
+                <KeywordSearch />
             </div>
         )
     }

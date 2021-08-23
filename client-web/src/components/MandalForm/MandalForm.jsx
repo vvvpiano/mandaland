@@ -1,6 +1,7 @@
 import React from "react"
 import { reduxForm, Field } from "redux-form"
 import SubmitButton from "../../components/SubmitButton/SubmitButton"
+import "./MandalForm.css"
 
 class MandalForm extends React.Component {
     renderSmallGrid = (key_i) => {
@@ -31,13 +32,13 @@ class MandalForm extends React.Component {
 
     renderDescription = () => {
         return (
-            <div className="description-container">
+            <div className="description-container english">
                 <div className="title">
-                    TITLE: <Field component="input" name="title" />
+                    TITLE : <Field component="input" name="title" placeholder="제목을 입력해주세요." />
                 </div>
                 <div className="devider" />
                 <div className="contents">
-                    CONTENTS: <Field component="input" name="contents" />
+                    CONTENTS : <Field component="input" name="contents" placeholder="내용을 입력해주세요." />
                 </div>
             </div>
         )
@@ -54,9 +55,11 @@ class MandalForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
-                <div className="mandalart-container">
-                    {this.renderDescription()}
-                    {this.renderBigGrid()}
+                <div className="mandalart-container-wrapper">
+                    <div className="mandalart-container">
+                        {this.renderDescription()}
+                        {this.renderBigGrid()}
+                    </div>
                 </div>
                 {this.renderEditButton()}
             </form>

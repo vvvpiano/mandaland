@@ -43,9 +43,11 @@ class Mandalart extends React.Component {
         if (!this.props.mandal || !this.props.mandal.mandal) return null
         return (
             <div className="description-container">
-                <div className="title">TITLE: {this.props.mandal.mandal.title}</div>
+                <div className="title">
+                    TITLE : <span className="bold">{this.props.mandal.mandal.title}</span>
+                </div>
                 <div className="devider" />
-                <div className="contents">CONTENTS: {this.props.mandal.mandal.contents}</div>
+                <div className="contents">CONTENTS : {this.props.mandal.mandal.contents}</div>
             </div>
         )
     }
@@ -67,9 +69,11 @@ class Mandalart extends React.Component {
         return (
             <div>
                 <MandalViewChanger />
-                <div className="mandalart-container">
-                    {this.renderDescription()}
-                    {this.renderBigGrid()}
+                <div className="mandalart-container-wrapper">
+                    <div className="mandalart-container view">
+                        {this.renderDescription()}
+                        {this.renderBigGrid()}
+                    </div>
                 </div>
                 {this.renderEditButton()}
             </div>

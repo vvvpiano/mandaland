@@ -3,7 +3,7 @@ import "./MandalViewChanger.css"
 
 const MandalViewChanger = () => {
     return (
-        <nav className="mandalViewChanger">
+        <nav className="mandalViewChanger english">
             <select name="" id="" className="plannerSelectBox">
                 <option value="">MANDALPLAN</option>
                 <option value="">MANDAL2</option>

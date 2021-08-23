@@ -1,0 +1,21 @@
+form .mandalart-container-wrapper {
+    width: 1232px;
+}
+
+.description-container input {
+    background-color: #ffffff00;
+    font-size: 16px;
+    border: none;
+}
+
+.title input {
+    width: 980px;
+}
+
+.contents input {
+    width: 943px;
+}
+
+.mandal-big-grid input {
+    border: none;
+}
