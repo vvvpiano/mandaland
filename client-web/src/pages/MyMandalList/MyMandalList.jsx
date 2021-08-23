@@ -29,7 +29,6 @@ const MyMandalList = (props) => {
         )
     }
 
-    console.log("props:", props)
     return (
         <div className="wrapMandallist">
             <section className="mandalSmallList">
@@ -173,7 +172,6 @@ const finishedMandalArr = [
     },
 ]
 const mapStateToProps = (state) => {
-    console.log(state);
     return { 
         user: state.user,
         mandalarts: state.mandalarts.mandalarts

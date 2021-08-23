@@ -4,7 +4,6 @@ import BodyText from "../Typography/BodyText"
 import "./MiniMandalBox.css"
 
 const MiniMandalBox = (props) => {
-    // console.log('mini mandal props:' ,props);
     return (
         <div className={`${props.size}MandalBox ${props.size}Mandal`}>
             <ul>

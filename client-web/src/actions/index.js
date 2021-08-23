@@ -26,7 +26,6 @@ export const fetchMandal = (mandalId) => async (dispatch) => {
 }
 export const getMandal = (userId) => async (dispatch) => {
     const { data } = await server.get(`/mandaluser?id=${userId}`)
-    console.log("data:", data)
     dispatch({ type: GET_MANDAL, payload: data })
 }
 
