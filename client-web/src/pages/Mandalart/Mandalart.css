@@ -19,9 +19,13 @@
     font-size: 16px;
 }
 
+.description-container .pixel {
+    padding-left: 10px;
+}
+
 .devider {
-    height: 1px;
-    background-color: #707070;
+    height: 3px;
+    background-color: black;
 }
 
 .title {

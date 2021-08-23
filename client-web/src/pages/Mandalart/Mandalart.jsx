@@ -44,10 +44,14 @@ class Mandalart extends React.Component {
         return (
             <div className="description-container">
                 <div className="title">
-                    TITLE : <span className="bold">{this.props.mandal.mandal.title}</span>
+                    <span className="pixel"> TITLE : </span>
+                    <span className="bold">{this.props.mandal.mandal.title}</span>
                 </div>
                 <div className="devider" />
-                <div className="contents">CONTENTS : {this.props.mandal.mandal.contents}</div>
+                <div className="contents">
+                    <span className="pixel"> CONTENTS : </span>
+                    {this.props.mandal.mandal.contents}
+                </div>
             </div>
         )
     }
