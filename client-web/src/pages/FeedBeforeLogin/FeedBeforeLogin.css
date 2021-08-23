@@ -1,0 +1,27 @@
+.keyword-section,
+.popular-section {
+    margin: 30px 40px;
+}
+.keyword-section {
+    margin-bottom: 72px;
+}
+.keyword-wrapper {
+    height: 220px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0;
+    border-top: 3px solid #707070;
+    border-left: 3px solid #707070;
+}
+
+.keyword-wrapper > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px solid #707070;
+    border-bottom: 3px solid #707070;
+}
+.keyword-wrapper div {
+    padding: 1rem;
+}
