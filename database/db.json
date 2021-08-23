@@ -23,15 +23,61 @@
         }
     ],
     "mandals": [
-        {
-            "id": 1,
-            "title": "2021년 남은 4개월 잘 보내보자!",
-            "contents": "우리집 고양이는 너무 귀여워",
-            "miniIds": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-            "userId": 1,
-            "thumbnailPath": "/images/thumname.png"
-        }
-    ],
+    {
+      "id": 1,
+      "title": "멋진 사람이 되자",
+      "contents": "우리집 고양이는 너무 귀여워",
+      "miniIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "userId": 1,
+      "thumbnailPath": "/images/thumname.png"
+    },
+    {
+        "id": 2,
+        "title": "우리집 강아지는 세상 최고 귀요미",
+        "contents": "우리집 강아지는 복슬강아지",
+        "miniIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "userId": 2,
+        "thumbnailPath": "/images/cat1.png"
+      },
+      {
+        "id": 3,
+        "title": "완성하자",
+        "contents": "1등하자",
+        "miniIds": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "userId": 2,
+        "thumbnailPath": "/images/cat2.png"
+      }
+  ],
     "minimandals": [
         {
             "id": 1,

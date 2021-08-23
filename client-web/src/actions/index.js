@@ -1,6 +1,6 @@
 import server from "../apis/server"
 import history from "../history"
-import { CREATE_LOG, CREATE_MANDAL, EDIT_MANDAL, FETCH_LOG, FETCH_MANDAL, FETCH_MONTH_LOG, PATCH_LOG, SIGN_IN, SIGN_OUT } from "../type"
+import { CREATE_LOG, CREATE_MANDAL, EDIT_MANDAL, FETCH_LOG, FETCH_MANDAL, FETCH_MONTH_LOG, PATCH_LOG, SIGN_IN, SIGN_OUT, GET_MANDAL} from "../type"
 import { getDateString, getYear, getMonthIndex, getDate } from "./getDateString"
 
 // USERS
@@ -28,6 +28,10 @@ export const signOut = () => {
 export const fetchMandal = (mandalId) => async (dispatch) => {
     const { data } = await server.get(`/mandal?id=${mandalId}`)
     dispatch({ type: FETCH_MANDAL, payload: data })
+}
+export const getMandal = (userId) => async (dispatch) => {
+    const { data } = await server.get(`/mandaluser?id=${userId}`)
+    dispatch({ type: GET_MANDAL, payload: data })
 }
 
 export const createMandal = (mandalData, miniData) => async (dispatch) => {
