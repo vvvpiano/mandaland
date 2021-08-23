@@ -6,11 +6,16 @@ import MandalForm from "../../components/MandalForm/MandalForm"
 import "./NewMandalart.css"
 
 class NewMandalart extends React.Component {
+    onSubmit = (formValues) => {
+        const { title, contents, thumbnailPath, ...miniData } = formValues
+        this.props.createMandal({ title, contents, thumbnailPath }, miniData)
+    }
+
     render() {
         return (
             <div>
                 <MandalViewChanger />
-                <MandalForm onSubmit={this.props.createMandal} />
+                <MandalForm onSubmit={this.onSubmit} />
             </div>
         )
     }

@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import history from "../../history"
 import MandalViewChanger from "../../components/MandalViewChanger/MandalViewChanger"
 import CustomButton from "../../components/CustomButton/CustomButton"
 import GoalCheck from "../../components/GoalCheck/GoalCheck"
@@ -52,7 +53,12 @@ class Mandalart extends React.Component {
     renderEditButton = () => {
         return (
             <div className="button-wrapper">
-                <CustomButton text="EDIT" />
+                <CustomButton
+                    text="EDIT"
+                    onClick={() => {
+                        history.push(`/mandalplan/edit/${this.props.match.params.mandalId}`)
+                    }}
+                />
             </div>
         )
     }

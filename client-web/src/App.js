@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar/Navbar"
 import Mandalart from "./pages/Mandalart/Mandalart"
 import MyMandalList from "./pages/MyMandalList/MyMandalList"
 import NewMandalart from "./pages/NewMandalart/NewMandalart"
+import EditMandalart from "./pages/EditMandalart/EditMandalart"
 import Three from "./pages/Three"
 
 import "./components/reset.css"
@@ -27,6 +28,7 @@ function App() {
                             <Route path="/" exact component={Main} />
                             <Route path="/mandalplan" exact component={MyMandalList} />
                             <Route path="/mandalplan/new" exact component={NewMandalart} />
+                            <Route path="/mandalplan/edit/:mandalId" exact component={EditMandalart} />
                             <Route path="/mandalart/:userId/:mandalId" exact component={Mandalart} />
                             <Route path="/three" exact component={Three} />
                         </div>

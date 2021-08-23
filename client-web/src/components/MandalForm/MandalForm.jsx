@@ -1,5 +1,4 @@
 import React from "react"
-import { connect } from "react-redux"
 import { reduxForm, Field } from "redux-form"
 import SubmitButton from "../../components/SubmitButton/SubmitButton"
 
@@ -44,12 +43,6 @@ class MandalForm extends React.Component {
         )
     }
 
-    onSubmit = (formValues) => {
-        console.log(formValues)
-        const { title, contents, thumbnailPath, ...miniData } = formValues
-        this.props.onSubmit({ title, contents, thumbnailPath }, miniData)
-    }
-
     renderEditButton = () => {
         return (
             <div className="button-wrapper">
@@ -60,7 +53,7 @@ class MandalForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+            <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
                 <div className="mandalart-container">
                     {this.renderDescription()}
                     {this.renderBigGrid()}

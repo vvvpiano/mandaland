@@ -1,6 +1,6 @@
 import server from "../apis/server"
 import history from "../history"
-import { CREATE_LOG, CREATE_MANDAL, FETCH_LOG, FETCH_MANDAL, FETCH_MONTH_LOG, PATCH_LOG, SIGN_IN, SIGN_OUT } from "../type"
+import { CREATE_LOG, CREATE_MANDAL, EDIT_MANDAL, FETCH_LOG, FETCH_MANDAL, FETCH_MONTH_LOG, PATCH_LOG, SIGN_IN, SIGN_OUT } from "../type"
 import { getDateString, getYear, getMonthIndex, getDate } from "./getDateString"
 
 // USERS
@@ -37,6 +37,15 @@ export const createMandal = (mandalData, miniData) => async (dispatch) => {
     console.log("created")
     dispatch({ type: CREATE_MANDAL, payload: data })
     history.push(`/mandalart/${userId}/${data.mandal.id}`)
+}
+
+export const editMandal = (mandalId, mandalData, miniData) => async (dispatch) => {
+    console.log("edit Mandal request")
+    const { data } = await server.put("/mandal/edit", { mandalId, mandalData, miniData })
+    console.log("edited")
+    dispatch({ type: EDIT_MANDAL, payload: data })
+    const userId = localStorage.getItem("id")
+    history.push(`/mandalart/${userId}/${mandalId}`)
 }
 
 // CHECKLOGS
