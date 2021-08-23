@@ -37,7 +37,6 @@ const Navlist = ({ title, iconPath, aLink, dropContent, open }) => {
         if (!drop || !isDropable) return null
         const navlists = dropContent.map((info) => {
             const { dropTitle, dropLink } = info
-            console.log(dropTitle, dropLink)
             return <Navlist title={dropTitle} open={open} aLink={dropLink} />
         })
         return <div className="dropdown-list-container">{navlists}</div>

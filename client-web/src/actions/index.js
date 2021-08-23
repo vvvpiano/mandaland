@@ -31,10 +31,10 @@ export const fetchMandal = (mandalId) => async (dispatch) => {
 }
 
 export const createMandal = (mandalData, miniData) => async (dispatch) => {
-    console.log("create Mandal")
+    console.log("create Mandal request")
     const userId = localStorage.getItem("id")
     const { data } = await server.post("/mandal/create", { userId, mandalData, miniData })
-    console.log("created", data)
+    console.log("created")
     dispatch({ type: CREATE_MANDAL, payload: data })
     history.push(`/mandalart/${userId}/${data.mandal.id}`)
 }
