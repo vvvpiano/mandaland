@@ -94,9 +94,9 @@ app.get("/checklogs", async (req, res) => {
     try {
         console.log(`GET /checklogs?userId=${req.query.userId}&month=${req.query.month}`)
         const { data } = await db.get(`/checklogs?userId=${req.query.userId}&month=${req.query.month}`)
-        const result = []
+        const result = new Array(31).fill(0)
         data.forEach((row) => {
-            result[row.day] = countLogs.countLogsByDay(row.checks)
+            result[row.day] += countLogs.countLogsByDay(row.checks)
         })
         res.status("200").json(result).end()
     } catch (err) {
@@ -116,6 +116,7 @@ app.post("/checklogs", async (req, res) => {
     }
 })
 
+// 만다라트의 데이터를 체크할 때 체크 로그 수정하는 요청
 app.put("/checklogs", async (req, res) => {
     try {
         console.log(`PATCH /checklogs`)

@@ -56,7 +56,7 @@ class NewMandalart extends React.Component {
     renderEditButton = () => {
         return (
             <div className="button-wrapper">
-                <SubmitButton text="EDIT" />
+                <SubmitButton text="SUBMIT" />
             </div>
         )
     }
