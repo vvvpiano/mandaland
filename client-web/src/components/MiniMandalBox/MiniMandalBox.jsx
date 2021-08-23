@@ -4,11 +4,13 @@ import BodyText from "../Typography/BodyText"
 import "./MiniMandalBox.css"
 
 const MiniMandalBox = (props) => {
+    // console.log('mini mandal props:' ,props);
     return (
         <div className={`${props.size}MandalBox ${props.size}Mandal`}>
             <ul>
                 <li>
                     {/* TO DO: 이미지 변경 가능하도록 */}
+                    {/* feed에서 상단에 프로필과 하트가 있는 바를 나타내는 영역 <-- */}
                     {props.getHeart && <div className="userInfoArea">
                         <div className="wrapUserPic">
                             <img src={props.user.imagePath} alt="" className="userPic"/>
@@ -23,8 +25,12 @@ const MiniMandalBox = (props) => {
                             <BodyText fontsize={12} text={"81"} />
                         </div>
                     </div>}
-                    
-                    <img src={window.location.origin + "/images/thumnail.png"} alt="thumnail" className="mandalThumNail" />
+                    {/* --> */}
+
+                    {(props.thumbnail == undefined) ? 
+                        <img src={window.location.origin + '/images/thumbnail.png'} alt="thumbnail" className="mandalthumbnail" />
+                        : <img src={window.location.origin + `/${props.thumbnail}`} alt="thumbnail" className="mandalthumbnail" />
+                    }
                 </li>
                 <li>
                     <div className="textTitleDate">

@@ -1,11 +1,35 @@
-import React from "react"
-import MiniMandalBox from "../../components/MiniMandalBox/MiniMandalBox"
+import React, { setState, useState, useEffect } from "react"
 import { connect } from "react-redux"
+import { getMandal } from "../../actions"
+import MiniMandalBox from "../../components/MiniMandalBox/MiniMandalBox"
 import MandalViewChanger from "../../components/MandalViewChanger/MandalViewChanger"
 import MonthlyProgress from "../../components/MonthlyProgress/MonthlyProgress"
 import "./MyMandalList.css"
 
 const MyMandalList = (props) => {
+    const id = window.localStorage.getItem("id");
+
+    useEffect(() => { 
+        props.getMandal(id)
+    }, [])
+
+    const renderCurrentMandal = () => {
+        if(props.mandalarts == null) {
+            return <div />
+        }
+        return (
+            <article className="gridItem">
+                <h3 className="currentMandalTitle">진행 중인 만다라트({`${props.mandalarts.length}`})</h3>
+                <div className="currentMandals">
+                    {props.mandalarts.map((mandal) => {
+                        return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} thumbnail={mandal.thumbnailPath} startDate={mandal.startDate} endDate={mandal.endDate} />
+                    })}
+                </div>
+            </article>
+        )
+    }
+
+    console.log("props:", props)
     return (
         <div className="wrapMandallist">
             <section className="mandalSmallList">
@@ -31,14 +55,7 @@ const MyMandalList = (props) => {
                             </div>
                         </article>
                         {/* 3. 진행중인 만다라트 */}
-                        <article className="gridItem">
-                            <h3 className="currentMandalTitle">진행 중인 만다라트({`${currentMandalArr.length}`})</h3>
-                            <div className="currentMandals">
-                                {currentMandalArr.map((mandal) => {
-                                    return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate} />
-                                })}
-                            </div>
-                        </article>
+                        {renderCurrentMandal()}
                         {/* 4. 완료된 만다라트 */}
                         <article className="gridItem">
                             <h3 className="finishedMandalTitle">완료된 만다라트({`${finishedMandalArr.length}`})</h3>
@@ -111,18 +128,21 @@ const currentMandalArr = [
         title: "행복하고 당당한 2021년의 나!!!",
         startDate: "2021.08.19",
         endDate: "2022.10.19",
+        userId: "108449024264620819194",
     },
     {
         id: 2,
         title: "냥하쓰 멋지게 살자",
         startDate: "2021.03.03",
         endDate: "2022.10.19",
+        userId: "108449024264620819194",
     },
     {
         id: 3,
         title: "김서영의 만다라트",
         startDate: "2021.04.03",
         endDate: "",
+        userId: "111098462535511801220",
     },
 ]
 
@@ -153,7 +173,11 @@ const finishedMandalArr = [
     },
 ]
 const mapStateToProps = (state) => {
-    return { user: state.user }
+    console.log(state);
+    return { 
+        user: state.user,
+        mandalarts: state.mandalarts.mandalarts
+    }
 }
 
-export default connect(mapStateToProps)(MyMandalList)
+export default connect(mapStateToProps, { getMandal })(MyMandalList)

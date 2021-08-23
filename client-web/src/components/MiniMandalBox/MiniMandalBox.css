@@ -13,6 +13,7 @@
     margin: 0;
 }
 .miniMandal li:first-child {
+    overflow: hidden;
     height: 285px;
     background-color: #f0f0f0;
     border-bottom: 3px solid #707070;
@@ -32,6 +33,7 @@
     margin: 0;
 }
 .smallMandal li:first-child {
+    overflow: hidden;
     height: 120px;
     background-color: #f0f0f0;
     border-bottom: 3px solid #707070;
@@ -41,7 +43,7 @@
     height: 30px;
     background-color: #fff;
 }
-.mandalThumNail {
+.mandalthumbnail {
     width: 100%;
     margin: auto;
     text-align: center;
