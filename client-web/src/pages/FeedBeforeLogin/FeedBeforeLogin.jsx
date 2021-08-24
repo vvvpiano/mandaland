@@ -28,29 +28,14 @@ const FeedBeforeLogin = (props) => {
                         {keywordArr.map((ele) => {
                             return <BodyText fontsize="20" text={ele} />
                         })}
-                        {/* <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
-                        <div>4</div>
-                        <div>5</div>
-                        <div>6</div>
-                        <div>7</div>
-                        <div>8</div>
-                        <div>9</div>
-                        <div>10</div>
-                        <div>11</div>
-                        <div>12</div>
-                        <div>13</div>
-                        <div>14</div>
-                        <div>15</div>
-                        <div>16</div> */}
                     </div>
                 </article>
                 <article className="popular-section">
                     <HeaderText text="이달의 인기 만다라트"/>
                     <div className="currentMandals" style={curMandalMarginstyle}>
+                        {/* 일단 인기만다라트를 측정할 척도가 없으므로 더미로 넣음 */}
                         {currentMandalArr.map((mandal) => {
-                            return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate} getHeart={true} />
+                            return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}  getHeart={true} userInfo={mandal} thumbnail={mandal.thumbnailPath} imagePath={mandal.imagePath} name={mandal.userName}/>
                         })}
                     </div>
 
@@ -65,24 +50,40 @@ const currentMandalArr = [
         title: "행복하고 당당한 2021년의 나!!!",
         startDate: "2021.08.19",
         endDate: "2022.10.19",
+        userName:"김민영",
+        heartNum:30,
+        imagePath: "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw=s96-c",
+        thumbnailPath:"/images/cat2.png",
     },
     {
         id: 2,
         title: "냥하쓰 멋지게 살자",
         startDate: "2021.03.03",
         endDate: "2022.10.19",
+        userName:"김양하",
+        heartNum:25,
+        imagePath: "https://lh3.googleusercontent.com/a-/AOh14GgNjvW-PSK8WofI2yQbvZDMnrjp8OnPeZugi5d0=s96-c",
+        thumbnailPath:"/images/thumbnail2.png",
     },
     {
         id: 3,
         title: "김서영의 만다라트",
         startDate: "2021.04.03",
         endDate: "",
+        userName:"김서영",
+        heartNum:22,
+        imagePath: "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw=s96-c",
+        thumbnailPath:"/images/thumbnail3.png",
     },
     {
         id: 3,
-        title: "김서영의 만다라트",
+        title: "오주머니의 만다라트",
         startDate: "2021.04.03",
         endDate: "",
+        heartNum:10,
+        userName:"오주연",
+        imagePath: "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw=s96-c",
+        thumbnailPath:"/images/thubnail4.png",
     },
 ]
 

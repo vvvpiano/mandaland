@@ -12,16 +12,16 @@ const MiniMandalBox = (props) => {
                     {/* feed에서 상단에 프로필과 하트가 있는 바를 나타내는 영역 <-- */}
                     {props.getHeart && <div className="userInfoArea">
                         <div className="wrapUserPic">
-                            <img src={props.user.imagePath} alt="" className="userPic"/>
+                            <img src={props.imagePath} alt="" className="userPic"/>
                             <div className="typography">
-                                <BodyText fontsize={14} text={props.user.name} />
-                                <BodyText fontsize={12} text={props.user.email} />
+                                <BodyText fontsize={14} text={props.name} />
+                                {/* <BodyText fontsize={12} text={props.user.email} /> */}
                             </div>
                         </div>
                         <div className="userHeartArea">
                             <img src={window.location.origin + "/images/heart.png"} alt="" className="heartIcon" />
                             {/* TO DO: db -> heart count */}
-                            <BodyText fontsize={12} text={"81"} />
+                            <BodyText fontsize={12} text={props.heartNum} />
                         </div>
                     </div>}
                     {/* --> */}
