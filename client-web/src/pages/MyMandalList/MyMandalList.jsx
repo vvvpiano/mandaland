@@ -8,9 +8,8 @@ import MonthlyProgress from "../../components/MonthlyProgress/MonthlyProgress"
 import "./MyMandalList.css"
 
 const MyMandalList = (props) => {
-    console.log(props);
     const id = window.localStorage.getItem("id");
-    const routeId = props.match.params.userid
+    const [routeId, setRouteId] = useState(props.match.params.userid)
     useEffect(() => { 
         props.getMandal(routeId)
     }, [])
