@@ -93,7 +93,6 @@ app.post("/mandal/create", async (req, res) => {
     }
 })
 
-
 app.put("/mandal/edit", async (req, res) => {
     try {
         console.log("PATCH /mandal/create")

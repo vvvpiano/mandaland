@@ -6,8 +6,15 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background-color: #f06756;
+}
+
+.custom-button:hover {
+    background-color: black;
+    color: #f06756;
 }
 
 .text {
+    font-family: DungGeunMo;
     font-size: 1.4rem;
 }

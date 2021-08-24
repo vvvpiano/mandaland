@@ -7,14 +7,6 @@ body {
 .wrapMandallist {
     display: flex;
 }
-.myText {
-    border-left: 1px solid #707070;
-    font-size: 20px;
-    padding: 0 34px;
-    top: calc(50% - 15px);
-    position: relative;
-    left: 18px;
-}
 .fourMandals {
     display: flex;
     justify-content: flex-start;

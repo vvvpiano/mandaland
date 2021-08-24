@@ -12,6 +12,21 @@ class Mandalart extends React.Component {
         this.props.fetchMandal(this.props.match.params.mandalId)
         this.props.fetchLog(this.props.match.params.userId, this.props.match.params.mandalId)
     }
+
+    renderDate() {
+        if (!this.props.mandal || !this.props.mandal.mandal) return null
+        let { startDate, endDate } = this.props.mandal.mandal
+        startDate = startDate.replaceAll("-", ".")
+        endDate = endDate.replaceAll("-", ".")
+        return (
+            <div className="date-container view">
+                <div>{startDate}</div>
+                <div className="tilda-padding">~</div>
+                <div>{endDate}</div>
+            </div>
+        )
+    }
+    
     onCheck = (miniMandalIndex, goalIndex, check) => {
         this.props.log.checks[miniMandalIndex][goalIndex] = check
         this.props.patchLog(miniMandalIndex, goalIndex, check, this.props.log)
@@ -42,9 +57,15 @@ class Mandalart extends React.Component {
         if (!this.props.mandal || !this.props.mandal.mandal) return null
         return (
             <div className="description-container">
-                <div className="title">TITLE: {this.props.mandal.mandal.title}</div>
+                <div className="title">
+                    <span className="pixel"> TITLE : </span>
+                    <span className="bold">{this.props.mandal.mandal.title}</span>
+                </div>
                 <div className="devider" />
-                <div className="contents">CONTENTS: {this.props.mandal.mandal.contents}</div>
+                <div className="contents">
+                    <span className="pixel"> CONTENTS : </span>
+                    {this.props.mandal.mandal.contents}
+                </div>
             </div>
         )
     }
@@ -67,9 +88,14 @@ class Mandalart extends React.Component {
         return (
             <div>
                 <MandalViewChanger />
-                <div className="mandalart-container">
-                    {this.renderDescription()}
-                    {this.renderBigGrid()}
+                <div className="mandalart-container-wrapper view">
+                    {this.renderDate()}
+                    <img src="/icons/pixel_arrow_left_x2.png" alt="arrow-left" />
+                    <div className="mandalart-container view">
+                        {this.renderDescription()}
+                        {this.renderBigGrid()}
+                    </div>
+                    <img src="/icons/pixel_arrow_right_x2.png" alt="arrow-right" />
                 </div>
                 {this.renderEditButton()}
             </div>
