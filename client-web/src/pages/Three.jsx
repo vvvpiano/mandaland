@@ -21,25 +21,25 @@ class Three extends React.Component {
             camera.lookAt(0, 0, 0)
 
             scene = new THREE.Scene()
-            scene.background = new THREE.Color(0xf0f0f0)
+            scene.background = new THREE.Color(0x5ace95)
 
             // roll-over helpers => 마우스 올리면 빨간색으로 가이드라인 보여줌
 
-            const rollOverGeo = new THREE.BoxGeometry(50, 50, 50)
+            const rollOverGeo = new THREE.BoxGeometry(25, 25, 25)
             rollOverMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, opacity: 0.5, transparent: true })
             rollOverMesh = new THREE.Mesh(rollOverGeo, rollOverMaterial)
             scene.add(rollOverMesh)
 
             // cubes
 
-            cubeGeo = new THREE.BoxGeometry(50, 50, 50)
+            cubeGeo = new THREE.BoxGeometry(25, 25, 25)
 
             // 이 부분 코드를 바꾸면 큐브 색 바뀜
-            cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xfeb74c, map: new THREE.TextureLoader().load(`${window.location.origin}/textures/square-outline-textured.png`) })
+            cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xfeb74c, map: new THREE.TextureLoader().load(`${window.location.origin}/images/heart.png`) })
 
             // grid
             //(1000, 20) 한 변의 길이가 1000일 때 20칸으로 나눔(한 칸당 50의 길이를 갖게 됨)
-            const gridHelper = new THREE.GridHelper(1000, 20)
+            const gridHelper = new THREE.GridHelper(2000, 80)
             scene.add(gridHelper)
 
             //
@@ -47,10 +47,10 @@ class Three extends React.Component {
             raycaster = new THREE.Raycaster()
             pointer = new THREE.Vector2()
 
-            const geometry = new THREE.PlaneGeometry(1000, 1000)
+            const geometry = new THREE.PlaneGeometry(2000, 2000)
             geometry.rotateX(-Math.PI / 2)
 
-            plane = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ visible: false }))
+            plane = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: 0xfeb74c, map: new THREE.TextureLoader().load(`${window.location.origin}/images/cat1.png`) }))
             scene.add(plane)
 
             objects.push(plane)
@@ -97,7 +97,7 @@ class Three extends React.Component {
                 const intersect = intersects[0]
 
                 rollOverMesh.position.copy(intersect.point).add(intersect.face.normal)
-                rollOverMesh.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25)
+                rollOverMesh.position.divideScalar(25).floor().multiplyScalar(25).addScalar(12.5)
             }
 
             renderThree()
@@ -123,7 +123,7 @@ class Three extends React.Component {
                 } else {
                     const voxel = new THREE.Mesh(cubeGeo, cubeMaterial)
                     voxel.position.copy(intersect.point).add(intersect.face.normal)
-                    voxel.position.divideScalar(50).floor().multiplyScalar(50).addScalar(25)
+                    voxel.position.divideScalar(25).floor().multiplyScalar(25).addScalar(12.5)
                     scene.add(voxel)
 
                     objects.push(voxel)
@@ -155,11 +155,17 @@ class Three extends React.Component {
         function renderThree() {
             renderer.render(scene, camera)
         }
+        console.log(scene)
     }
 
     render() {
-        console.log(`${window.location.origin}'/textures/square-outline-textured.png'`)
-        return <div />
+        return (
+            <div
+                ref={(ref) => {
+                    this.mount = ref
+                }}
+            />
+        )
     }
 }
 

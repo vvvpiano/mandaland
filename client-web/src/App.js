@@ -32,7 +32,7 @@ function App() {
                             <Route path="/mandalplan/edit/:mandalId" exact component={EditMandalart} />
                             <Route path="/mandalart/:userId/:mandalId" exact component={Mandalart} />
                             <Route path="/feed" exact component={FeedBeforeLogin} />
-                            <Route path="/three" exact component={Three} />
+                            <Route path="/mandaland/:userId" exact component={Three} />
                         </div>
                     </Switch>
                 </div>
