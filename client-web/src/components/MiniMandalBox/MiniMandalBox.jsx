@@ -11,32 +11,33 @@ const MiniMandalBox = (props) => {
                     {/* TO DO: 이미지 변경 가능하도록 */}
                     {/* feed에서 상단에 프로필과 하트가 있는 바를 나타내는 영역 <-- */}
                     {props.getHeart && <div className="userInfoArea">
+                        {console.log(props.userInfo)}
                         <div className="wrapUserPic">
-                            <img src={props.user.imagePath} alt="" className="userPic"/>
+                            <img src={props.userInfo.imagePath} alt="" className="userPic"/>
                             <div className="typography">
-                                <BodyText fontsize={14} text={props.user.name} />
-                                <BodyText fontsize={12} text={props.user.email} />
+                                <BodyText fontsize={14} text={props.userInfo.userName} />
+                                {/* <BodyText fontsize={12} text={props.user.email} /> */}
                             </div>
                         </div>
                         <div className="userHeartArea">
                             <img src={window.location.origin + "/images/heart.png"} alt="" className="heartIcon" />
                             {/* TO DO: db -> heart count */}
-                            <BodyText fontsize={12} text={"81"} />
+                            <BodyText fontsize={12} text={props.userInfo.heartNum} />
                         </div>
                     </div>}
                     {/* --> */}
 
-                    {(props.thumbnail == undefined) ? 
+                    {(props.userInfo.thumbnailPath == undefined) ? 
                         <img src={window.location.origin + '/images/thumbnail.png'} alt="thumbnail" className="mandalthumbnail" />
-                        : <img src={window.location.origin + `/${props.thumbnail}`} alt="thumbnail" className="mandalthumbnail" />
+                        : <img src={window.location.origin + `/${props.userInfo.thumbnailPath}`} alt="thumbnail" className="mandalthumbnail" />
                     }
                 </li>
                 <li>
                     <div className="textTitleDate">
-                        <span>{props.title}</span>
-                        {props.startDate != null && (
+                        <span>{props.userInfo.title}</span>
+                        {props.userInfo.startDate != null && (
                             <span>
-                                {props.startDate} ~ {props.endDate}
+                                {props.userInfo.startDate} ~ {props.userInfo.endDate}
                             </span>
                         )}
                     </div>
