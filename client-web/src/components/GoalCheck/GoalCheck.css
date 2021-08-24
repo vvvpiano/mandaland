@@ -1,16 +1,19 @@
 .goal {
-    width: 111px;
-    height: 68px;
+    width: 112px;
+    height: 69px;
     text-align: center;
     line-height: 65px;
 
-    box-shadow: 0 0 0 1px #707070;
+    background-color: white;
+    box-shadow: 0 0 0 1px black;
     cursor: pointer;
 }
 
 .goal.keyword {
-    background-color: #f0f0f0;
+    background-color: #fef7d8;
     cursor: default;
+    border: 3px solid black;
+    box-sizing: border-box;
 }
 
 .center-mandal .goal {
@@ -18,5 +21,7 @@
 }
 
 .center-mandal .goal.keyword {
-    background-color: #969696;
+    background-color: black;
+    color: white;
+    font-weight: bold;
 }
