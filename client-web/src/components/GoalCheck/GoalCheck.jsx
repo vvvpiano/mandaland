@@ -13,7 +13,7 @@ class GoalCheck extends React.Component {
     }
 
     renderBackgroundColor = () => {
-        return this.state.check === 1 ? { backgroundColor: "#f76767" } : {}
+        return this.state.check === 1 ? { backgroundColor: "rgb(240, 103, 86)" } : {}
     }
 
     render() {
