@@ -27,7 +27,7 @@ function App() {
                     <Switch>
                         <div className="main-body">
                             <Route path="/" exact component={Main} />
-                            <Route path="/mandalplan/:userid" exact component={MyMandalList} />
+                            <Route path="/mandalplan/view/:userid" exact component={MyMandalList} />
                             <Route path="/mandalplan/new" exact component={NewMandalart} />
                             <Route path="/mandalplan/edit/:mandalId" exact component={EditMandalart} />
                             <Route path="/mandalart/:userId/:mandalId" exact component={Mandalart} />

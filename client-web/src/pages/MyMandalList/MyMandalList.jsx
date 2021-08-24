@@ -9,7 +9,7 @@ import "./MyMandalList.css"
 
 const MyMandalList = (props) => {
     const id = window.localStorage.getItem("id");
-    const routeId = props.match.params.userid
+    const [routeId, setRouteId] = useState(props.match.params.userid)
     useEffect(() => { 
         props.getMandal(routeId)
     }, [])
