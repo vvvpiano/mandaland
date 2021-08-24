@@ -1,6 +1,7 @@
 import React from 'react'
 import FeedTitle from '../../components/FeedTitle/FeedTitle';
 import HeaderText from '../../components/Typography/HeaderText';
+import BodyText from '../../components/Typography/BodyText';
 import MiniMandalBox from '../../components/MiniMandalBox/MiniMandalBox';
 import './FeedBeforeLogin.css'
 
@@ -12,6 +13,10 @@ const FeedBeforeLogin = (props) => {
     const curMandalMarginstyle = {
         justifyContent :"space-between",
     }    
+    const keywordArr = [
+        '디자인', '개발', '환경사랑', '고시', '취미생활', '문화. 예술', '건강', '사진', 
+        '영화', ' 음악', '동물', '음식', '뮤지컬', '루틴', '알고리즘', '언어'
+    ]
     
     return (
         <div>
@@ -20,7 +25,10 @@ const FeedBeforeLogin = (props) => {
                 <article className="keyword-section">
                     <HeaderText text="만다라트 키워드"/>
                     <div class="keyword-wrapper">
-                        <div>1</div>
+                        {keywordArr.map((ele) => {
+                            return <BodyText fontsize="20" text={ele} />
+                        })}
+                        {/* <div>1</div>
                         <div>2</div>
                         <div>3</div>
                         <div>4</div>
@@ -35,7 +43,7 @@ const FeedBeforeLogin = (props) => {
                         <div>13</div>
                         <div>14</div>
                         <div>15</div>
-                        <div>16</div>
+                        <div>16</div> */}
                     </div>
                 </article>
                 <article className="popular-section">
