@@ -12,7 +12,6 @@ class Mandalart extends React.Component {
         this.props.fetchMandal(this.props.match.params.mandalId)
         this.props.fetchLog(this.props.match.params.userId, this.props.match.params.mandalId)
     }
-
     onCheck = (miniMandalIndex, goalIndex, check) => {
         this.props.log.checks[miniMandalIndex][goalIndex] = check
         this.props.patchLog(miniMandalIndex, goalIndex, check, this.props.log)
@@ -64,6 +63,7 @@ class Mandalart extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return (
             <div>
                 <MandalViewChanger />

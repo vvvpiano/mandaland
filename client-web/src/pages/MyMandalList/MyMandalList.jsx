@@ -3,154 +3,124 @@ import { connect } from "react-redux"
 import { getMandal } from "../../actions"
 import MiniMandalBox from "../../components/MiniMandalBox/MiniMandalBox"
 import MandalViewChanger from "../../components/MandalViewChanger/MandalViewChanger"
+import FeedTitle from "../../components/FeedTitle/FeedTitle"
 import MonthlyProgress from "../../components/MonthlyProgress/MonthlyProgress"
 import "./MyMandalList.css"
 
 const MyMandalList = (props) => {
+    console.log(props);
     const id = window.localStorage.getItem("id");
-
+    const routeId = props.match.params.userid
     useEffect(() => { 
-        props.getMandal(id)
+        props.getMandal(routeId)
     }, [])
-    const renderCurrentProfile = () => {
-        return (
-            <article className="gridItem">
-                <div className="myMiniProfile">
-                    <img src={props.user.imagePath === null ? window.location.origin + "/icons/user.svg" : props.user.imagePath.replace("=s96-c", "")} alt="" className="profileImg" />
-                    <h2 className="userName">{props.user.name}</h2>
-                    <h3 class="userEmail">{props.user.email}</h3>
-                </div>
-                    <div className="myMandalResolution">{/* TO DO: modify user DB -> {props.user.resolution} */}“ 하루하루를 성실하게 보내고 싶은 개발자입니다. ”</div>
-            </article>
-        )
-    }
-
-    // const renderMonthlyActivity = () => {
-    //     return (
-    //         <article className="gridItem">
-    //             <h3 className="monthlyTitle english">Monthly Activity</h3>
-    //             <div className="progressAlign">
-    //                 {monthlyActivityData.map((each)=>{
-    //                     return <MonthlyProgress month={each.month} progress={each.progress}/>
-    //                 })}
-    //             </div>
-    //             <div className="goMandalandBtn">
-    //                 <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
-    //                 <span className="goMandalText english">GO</span>
-    //             </div>
-    //         </article>
-    //     )
-    // }
-    const renderCurrentMandal = () => {
-        if(props.mandalarts == null) {
-            return <div />
-        }
-        return (
-            <article className="gridItem">
-                <h3 className="currentMandalTitle">진행 중인 만다라트({`${props.mandalarts.length}`})</h3>
-                <div className="currentMandals">
-                    {props.mandalarts.map((mandal) => {
-                        return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} thumbnail={mandal.thumbnailPath} startDate={mandal.startDate} endDate={mandal.endDate} />
-                    })}
-                </div>
-            </article>
-        )
-    }
 
     return (
         <div className="wrapMandallist">
             <section className="mandalSmallList">
                 <div className="wrapModal">
-                    <MandalViewChanger />
+                    {id == routeId ? <MandalViewChanger /> : <FeedTitle />}
                     <section className="gridContainer">
                         {/* 1. profile */}
-                        {renderCurrentProfile()}
+                        {renderCurrentProfile(props)}
 
                         {/* 2. Monthly Activity */}
-                        <article className="gridItem makeMargin">
-                            <h3 className="monthlyTitle english">Monthly Activity</h3>
-                            <div className="progressAlign">
-                                {monthlyActivityData.map((each)=>{
-                                    return <MonthlyProgress month={each.month} progress={each.progress}/>
-                                })}
-                            </div>
+                        {renderMonthlyActivity(props)}
+                        
+                        {/* (optional) 3. BUTTON -> go to mandaland */}
+                        {id == routeId ? <div></div>:renderMandalandBtn(props)}
 
-                        </article>
-                        <button className="gridItem goMandalandBtn">
-                            <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
-                            <div className="wrapGoText">
-                                <span className="goMandalText english">GO</span>
-                                <img src={window.location.origin + "/icons/arrow_pink.svg"} alt="" />
-                            </div>
-                        </button>
-                        {/* 3. 진행중인 만다라트 */}
-                        {renderCurrentMandal()}
+                        {/* 4. 진행중인 만다라트 */}
+                        {renderCurrentMandal(props)}
 
-                        {/* 4. 완료된 만다라트 */}
-                        <article className="gridItem">
-                            <h3 className="finishedMandalTitle">완료된 만다라트({`${finishedMandalArr.length}`})</h3>
-                            <div className="finishedMandals">
-                                {finishedMandalArr.map((mandal) => {
-                                    return <MiniMandalBox key={mandal.id} size="small" title={mandal.title} />
-                                })}
-                            </div>
-                        </article>
+                        {/* 5. 완료된 만다라트 */}
+                        {renderFinishedMandals(props)}
                     </section>
                 </div>
             </section>
         </div>
     )
+
+
+}
+
+export const renderCurrentProfile = (props) => {
+    return (
+        <article className="gridItem">
+            <div className="myMiniProfile">
+                <img src={props.user.imagePath === null ? window.location.origin + "/icons/user.svg" : props.user.imagePath} alt="" className="profileImg" />
+                <h2 className="userName">{props.user.name}</h2>
+                <h3 class="userEmail">{props.user.email}</h3>
+            </div>
+                <div className="myMandalResolution">{/* TO DO: modify user DB -> {props.user.resolution} */}“ 하루하루를 성실하게 보내고 싶은 개발자입니다. ”</div>
+        </article>
+    )
+}
+
+export const renderMonthlyActivity = (props) => {
+    return (
+        <article className="gridItem makeMargin">
+            <h3 className="monthlyTitle english">Monthly Activity</h3>
+            <div className="progressAlign">
+                {monthlyActivityData.map((each)=>{
+                    return <MonthlyProgress month={each.month} progress={each.progress}/>
+                })}
+            </div>
+        </article>
+    )
+}
+export const renderMandalandBtn = (props) => {
+    return (
+        <button className="gridItem goMandalandBtn">
+            <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
+            <div className="wrapGoText">
+                <span className="goMandalText english">GO</span>
+                <img src={window.location.origin + "/icons/arrow_pink.svg"} alt="" />
+            </div>
+        </button>
+    )
+}
+export const renderCurrentMandal = (props) => {
+    if(props.mandalarts == null) {
+        return <div />
+    }
+    return (
+        <article className="gridItem">
+            <h3 className="currentMandalTitle">진행 중인 만다라트({`${props.mandalarts.length}`})</h3>
+            <div className="currentMandals">
+                {props.mandalarts.map((mandal) => {
+                    return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} thumbnail={mandal.thumbnailPath} startDate={mandal.startDate} endDate={mandal.endDate} />
+                })}
+            </div>
+        </article>
+    )
+}
+export const renderFinishedMandals = (props) => {
+    return(
+        <article className="gridItem">
+            <h3 className="finishedMandalTitle">완료된 만다라트({`${finishedMandalArr.length}`})</h3>
+            <div className="finishedMandals">
+                {finishedMandalArr.map((mandal) => {
+                    return <MiniMandalBox key={mandal.id} size="small" title={mandal.title} />
+                })}
+            </div>
+        </article>
+    )
 }
 // dummy for mandals table
 const monthlyActivityData = [
-    {
-        month: "Jan",
-        progress: 90,
-    },
-    {
-        month: "Feb",
-        progress: 80,
-    },
-    {
-        month: "Mar",
-        progress: 100,
-    },
-    {
-        month: "Apr",
-        progress: 70,
-    },
-    {
-        month: "May",
-        progress: 10,
-    },
-    {
-        month: "Jun",
-        progress: 50,
-    },
-    {
-        month: "Jul",
-        progress: 30,
-    },
-    {
-        month: "Aug",
-        progress: 20,
-    },
-    {
-        month: "Sep",
-        progress: 90,
-    },
-    {
-        month: "Oct",
-        progress: 50,
-    },
-    {
-        month: "Nov",
-        progress: 60,
-    },
-    {
-        month: "Dec",
-        progress: 90,
-    },
+    { month: "Jan", progress: 90,},
+    { month: "Feb",progress: 80, },
+    { month: "Mar", progress: 100, },
+    { month: "Apr", progress: 70, },
+    { month: "May", progress: 10, },
+    { month: "Jun", progress: 50, },
+    { month: "Jul", progress: 30, },
+    { month: "Aug", progress: 20, },
+    { month: "Sep", progress: 90, },
+    { month: "Oct", progress: 50, },
+    { month: "Nov", progress: 60, },
+    { month: "Dec", progress: 90, },
 ]
 const currentMandalArr = [
     {
