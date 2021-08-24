@@ -58,9 +58,24 @@ app.get("/mandaluser", async (req, res) => {
         console.log(`GET /mandals?userId=${req.query.id}`)
         const mandal = await db.get(`/mandals/?userId=${req.query.id}`)
         // const miniMandals = await db.get(`/minimandals?mandalId=${req.query.id}`)
-        console.log(mandal)
         const data = {
             mandalarts: mandal.data,
+            // miniMandals: miniMandals.data,
+        }
+        res.status("200").json(data).end() // 200 == success
+    } catch (err) {
+        console.log(err)
+        res.status("400").json(err).end()
+    }
+})
+app.get("/mandalplan/view", async (req, res) => {
+    try {
+        console.log(`GET /users?userId=${req.query.id}`)
+        const mandal = await db.get(`/users?id=${req.query.id}`)
+        // const miniMandals = await db.get(`/minimandals?mandalId=${req.query.id}`)
+        console.log(mandal)
+        const data = {
+            friends: mandal.data,
             // miniMandals: miniMandals.data,
         }
         res.status("200").json(data).end() // 200 == success

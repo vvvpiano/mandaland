@@ -1,6 +1,6 @@
 import React, { setState, useState, useEffect } from "react"
 import { connect } from "react-redux"
-import { getMandal } from "../../actions"
+import { getMandal, getFriendInfo } from "../../actions"
 import MiniMandalBox from "../../components/MiniMandalBox/MiniMandalBox"
 import MandalViewChanger from "../../components/MandalViewChanger/MandalViewChanger"
 import FeedTitle from "../../components/FeedTitle/FeedTitle"
@@ -12,8 +12,8 @@ const MyMandalList = (props) => {
     const [routeId, setRouteId] = useState(props.match.params.userid)
     useEffect(() => { 
         props.getMandal(routeId)
-    }, [])
-
+        props.getFriendInfo(routeId)
+    }, [routeId])
     return (
         <div className="wrapMandallist">
             <section className="mandalSmallList">
@@ -51,13 +51,18 @@ const mandalListStyle = {
     overflowY: "hidden",
     width: "100%"
 }
+// TO DO: user id로 user info 가지고오는 reducer
 export const renderCurrentProfile = (props) => {
+    console.log(props.friends[0])
+    if(props.friends[0] == undefined) {
+        return <div>no user data</div>
+    }
     return (
         <article className="gridItem">
             <div className="myMiniProfile">
-                <img src={props.user.imagePath === null ? window.location.origin + "/icons/user.svg" : props.user.imagePath} alt="" className="profileImg" />
-                <h2 className="userName">{props.user.name}</h2>
-                <h3 class="userEmail">{props.user.email}</h3>
+                <img src={props.friends[0].imagePath === null ? window.location.origin + "/icons/user.svg" : props.friends[0].imagePath} alt="" className="profileImg" />
+                <h2 className="userName">{props.friends[0].name}</h2>
+                <h3 class="userEmail">{props.friends[0].email}</h3>
             </div>
                 <div className="myMandalResolution">{/* TO DO: modify user DB -> {props.user.resolution} */}“ 하루하루를 성실하게 보내고 싶은 개발자입니다. ”</div>
         </article>
@@ -180,10 +185,12 @@ const finishedMandalArr = [
     },
 ]
 const mapStateToProps = (state) => {
+    console.log(state);
     return { 
         user: state.user,
-        mandalarts: state.mandalarts.mandalarts
+        mandalarts: state.mandalarts.mandalarts,
+        friends: state.friends.friends,
     }
 }
 
-export default connect(mapStateToProps, { getMandal })(MyMandalList)
+export default connect(mapStateToProps, { getMandal, getFriendInfo})(MyMandalList)
