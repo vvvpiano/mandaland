@@ -42,7 +42,15 @@ const MyMandalList = (props) => {
 
 
 }
-
+const marginStyle = {
+    margin: `30px 40px 0 0`
+}
+const mandalListStyle = {
+    flexWrap: "noWrap",
+    overflowX: "auto",
+    overflowY: "hidden",
+    width: "100%"
+}
 export const renderCurrentProfile = (props) => {
     return (
         <article className="gridItem">
@@ -86,9 +94,9 @@ export const renderCurrentMandal = (props) => {
     return (
         <article className="gridItem">
             <h3 className="currentMandalTitle">진행 중인 만다라트({`${props.mandalarts.length}`})</h3>
-            <div className="currentMandals">
+            <div className="currentMandals" style={mandalListStyle}>
                 {props.mandalarts.map((mandal) => {
-                    return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} thumbnail={mandal.thumbnailPath} startDate={mandal.startDate} endDate={mandal.endDate} />
+                    return <MiniMandalBox style={marginStyle} key={mandal.id} size="mini" title={mandal.title} thumbnail={mandal.thumbnailPath} startDate={mandal.startDate} endDate={mandal.endDate} />
                 })}
             </div>
         </article>
