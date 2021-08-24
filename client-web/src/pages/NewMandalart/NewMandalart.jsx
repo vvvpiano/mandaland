@@ -8,8 +8,8 @@ import "./NewMandalart.css"
 
 class NewMandalart extends React.Component {
     onSubmit = (formValues) => {
-        const { title, contents, thumbnailPath, ...miniData } = formValues
-        this.props.createMandal({ title, contents, thumbnailPath }, miniData)
+        const { title, contents, thumbnailPath, startDate, endDate, ...miniData } = formValues
+        this.props.createMandal({ title, contents, thumbnailPath, startDate, endDate }, miniData)
     }
 
     render() {

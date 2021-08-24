@@ -13,13 +13,27 @@ class KeywordSearch extends React.Component {
         )
     }
 
-    renderMini() {
+    renderContent() {
+        // let tempMinis
+        if (!tempMinis)
+            return (
+                <div className="keyword-guide">
+                    <div className="guide-container">
+                        <img src="/icons/calendar_big.svg" alt="no-keywords-image" />
+                        <div className="text big">관심있는 키워드 검색을 통해</div>
+                        <div className="text">다른 사람들의 미니 만다라트를 참고해보세요!</div>
+                    </div>
+                </div>
+            )
         return (
-            <React.Fragment>
-                {tempMinis.map((mini) => {
-                    return <div className="mini-container">{this.renderMiniMandal(mini)}</div>
-                })}
-            </React.Fragment>
+            <div className="grid-scroll">
+                <div className="mini-column-grid">
+                    {tempMinis.map((mini) => {
+                        return <div className="mini-container">{this.renderMiniMandal(mini)}</div>
+                    })}
+                </div>
+                <div className="data-end-padding" />
+            </div>
         )
     }
 
@@ -36,16 +50,13 @@ class KeywordSearch extends React.Component {
                     <div>
                         <div className="search-container">
                             <div className="search-wrapper">
-                                <input type="text" />
+                                <input type="text" placeholder="키워드를 입력해주세요." />
                                 <img className="search-button" src="/icons/search.svg" alt="search" />
                             </div>
                         </div>
                     </div>
                 </form>
-                <div className="grid-scroll">
-                    <div className="mini-column-grid">{this.renderMini()}</div>
-                    <div className="data-end-padding" />
-                </div>
+                {this.renderContent()}
             </div>
         )
     }

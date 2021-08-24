@@ -13,6 +13,20 @@ class Mandalart extends React.Component {
         this.props.fetchLog(this.props.match.params.userId, this.props.match.params.mandalId)
     }
 
+    renderDate() {
+        if (!this.props.mandal || !this.props.mandal.mandal) return null
+        let { startDate, endDate } = this.props.mandal.mandal
+        startDate = startDate.replaceAll("-", ".")
+        endDate = endDate.replaceAll("-", ".")
+        return (
+            <div className="date-container view">
+                <div>{startDate}</div>
+                <div className="tilda-padding">~</div>
+                <div>{endDate}</div>
+            </div>
+        )
+    }
+
     onCheck = (miniMandalIndex, goalIndex, check) => {
         this.props.log.checks[miniMandalIndex][goalIndex] = check
         this.props.patchLog(miniMandalIndex, goalIndex, check, this.props.log)
@@ -73,11 +87,14 @@ class Mandalart extends React.Component {
         return (
             <div>
                 <MandalViewChanger />
-                <div className="mandalart-container-wrapper">
+                <div className="mandalart-container-wrapper view">
+                    {this.renderDate()}
+                    <img src="/icons/pixel_arrow_left_x2.png" alt="arrow-left" />
                     <div className="mandalart-container view">
                         {this.renderDescription()}
                         {this.renderBigGrid()}
                     </div>
+                    <img src="/icons/pixel_arrow_right_x2.png" alt="arrow-right" />
                 </div>
                 {this.renderEditButton()}
             </div>

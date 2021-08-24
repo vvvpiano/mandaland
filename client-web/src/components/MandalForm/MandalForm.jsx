@@ -4,6 +4,16 @@ import SubmitButton from "../../components/SubmitButton/SubmitButton"
 import "./MandalForm.css"
 
 class MandalForm extends React.Component {
+    renderDate = () => {
+        return (
+            <div className="date-container">
+                <Field component="input" type="date" name="startDate" className="start-date" />
+                ~
+                <Field component="input" type="date" name="endDate" className="end-date" />
+            </div>
+        )
+    }
+
     renderSmallGrid = (key_i) => {
         const mini = Array(9)
             .fill(0)
@@ -34,11 +44,13 @@ class MandalForm extends React.Component {
         return (
             <div className="description-container english">
                 <div className="title">
-                    TITLE : <Field component="input" name="title" placeholder="제목을 입력해주세요." />
+                    <span className="pixel"> TITLE : </span>
+                    <Field component="input" name="title" placeholder="제목을 입력해주세요." />
                 </div>
                 <div className="devider" />
                 <div className="contents">
-                    CONTENTS : <Field component="input" name="contents" placeholder="내용을 입력해주세요." />
+                    <span className="pixel"> CONTENTS : </span>
+                    <Field component="input" name="contents" placeholder="내용을 입력해주세요." />
                 </div>
             </div>
         )
@@ -56,6 +68,7 @@ class MandalForm extends React.Component {
         return (
             <form onSubmit={this.props.handleSubmit(this.props.onSubmit)}>
                 <div className="mandalart-container-wrapper">
+                    {this.renderDate()}
                     <div className="mandalart-container">
                         {this.renderDescription()}
                         {this.renderBigGrid()}

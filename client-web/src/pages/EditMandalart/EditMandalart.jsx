@@ -13,7 +13,8 @@ class EditMandalart extends React.Component {
     mapInitialValues = () => {
         if (!this.props.mandal) return null
         const { mandal, miniMandals } = this.props.mandal
-        const initialValues = { title: mandal.title, contents: mandal.contents }
+        const { title, contents, startDate, endDate, ...others } = mandal
+        const initialValues = { title, contents, startDate, endDate }
         miniMandals.forEach((mini, i) => {
             mini.goals.forEach((goal, j) => {
                 const key = i + "-" + j
@@ -25,9 +26,9 @@ class EditMandalart extends React.Component {
 
     onSubmit = (formValues) => {
         console.log("on Submit in Edit")
-        const { title, contents, thumbnailPath, ...miniData } = formValues
+        const { title, contents, thumbnailPath, startDate, endDate, ...miniData } = formValues
         const mandalId = this.props.match.params.mandalId
-        this.props.editMandal(mandalId, { title, contents, thumbnailPath }, miniData)
+        this.props.editMandal(mandalId, { title, contents, thumbnailPath, startDate, endDate }, miniData)
     }
 
     renderForm() {
