@@ -4,7 +4,7 @@
             "userId": "111098462535511801220",
             "email": "vvvpiano60@gmail.com",
             "name": "김서영",
-            "imagePath": "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw=s96-c",
+            "imagePath": "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw",
             "id": 1
         },
         {
@@ -323,6 +323,33 @@
             "userId": "1",
             "mandalId": "1",
             "id": 10
+        },
+        {
+            "date": "20210825",
+            "year": 2021,
+            "month": 7,
+            "day": 25,
+            "checks": [
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0]
+            ],
+            "userId": "1",
+            "mandalId": "1",
+            "id": 11
+        }
+    ],
+    "lands": [
+        {
+            "userId": 1,
+            "cubes": [],
+            "id": 1
         }
     ]
 }
