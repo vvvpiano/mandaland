@@ -7,6 +7,9 @@
     border-right: 4px solid #000;
     font-weight: 600;
     z-index: 99;
+    position: fixed;
+    overflow: auto;
+    height: 100vh;
 }
 
 .toggle-button-wrapper {
@@ -24,4 +27,7 @@
 }
 .wrapNavmenu {
     margin-bottom: 40px;
+}
+.marginDiv {
+    margin:100px 0 100px 0
 }

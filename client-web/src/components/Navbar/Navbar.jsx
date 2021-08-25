@@ -46,6 +46,7 @@ class Navbar extends React.Component {
                         {this.renderToggleTitle()}
                     </div>
                 </div>
+                <div className="marginDiv"></div>
             </nav>
         )
     }
