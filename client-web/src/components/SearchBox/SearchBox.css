@@ -1,12 +1,9 @@
 .inputBox {
-    width: 40em;
+    width: 50em;
     padding: 6px 12px;
     border-radius: 0px;
     border: 3px solid #707070;
-    padding-left: 12%;
-    /* background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2.5' strokeLinecap='round' strokeLinejoin='round' className='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E%0A");
-    background-position: 98% 3px;
-    background-repeat: no-repeat; */
+    padding-left: 15%;
 }
 .inputBoxAlign {
     display: flex;
@@ -16,7 +13,7 @@
 }
 .selectBoxStyle {
     position: relative;
-    left: 5em;
+    left: 6em;
     top: 14%;
     height: 70%;
     border: none;
@@ -30,6 +27,10 @@
     top: 10px;
     left: -31px;
     cursor: pointer;
+}
+.searchIconStyle {
+    width: 24px;
+    height: 24px;
 }
 *:focus {
     outline: none;
