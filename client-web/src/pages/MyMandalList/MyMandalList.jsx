@@ -71,7 +71,7 @@ export const renderCurrentProfile = (props) => {
 
 export const renderMonthlyActivity = (props) => {
     return (
-        <article className="gridItem makeMargin">
+        <article className="gridItem">
             <h3 className="monthlyTitle english">Monthly Activity</h3>
             <div className="progressAlign">
                 {monthlyActivityData.map((each)=>{

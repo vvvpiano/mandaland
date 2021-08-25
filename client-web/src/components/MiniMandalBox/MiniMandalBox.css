@@ -1,7 +1,7 @@
 .miniMandalBox {
     min-width: 285px;
     max-width: 285px;
-    border: 3px solid #707070;
+    border: 3px solid #000;
 }
 .miniMandal {
     background: #ffffff;
@@ -16,7 +16,7 @@
     overflow: hidden;
     height: 285px;
     background-color: #f0f0f0;
-    border-bottom: 3px solid #707070;
+    border-bottom: 3px solid #000;
 }
 .miniMandal li:last-child {
     height: 66px;
@@ -25,7 +25,7 @@
 .smallMandalBox {
     min-width: 135px;
     max-width: 135px;
-    border: 3px solid #707070;
+    border: 3px solid #000;
 }
 .smallMandal ul {
     list-style: none;
@@ -36,7 +36,7 @@
     overflow: hidden;
     height: 120px;
     background-color: #f0f0f0;
-    border-bottom: 3px solid #707070;
+    border-bottom: 3px solid #000;
     overflow: hidden;
 }
 .smallMandal li:last-child {
@@ -91,7 +91,7 @@
 .userInfoArea {
     position: absolute;
     background-color: #fff;
-    border-bottom: 3px solid #707070;
+    border-bottom: 3px solid #000;
     width: 245px;
     height: 66px;
     display: flex;
@@ -105,7 +105,7 @@
 }
 .userPic {
     border-radius: 50%;
-    border: 2px solid #707070;
+    border: 2px solid #000;
     width: 37px;
     height: 37px;
     margin-right: 10px;

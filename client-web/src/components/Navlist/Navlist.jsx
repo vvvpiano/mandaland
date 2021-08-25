@@ -45,7 +45,7 @@ const Navlist = ({ title, iconPath, aLink, dropContent, open }) => {
     const renderNavList = () => {
         return (
             <React.Fragment>
-                <div className="navlist-container">
+                <div className="navlist-container english">
                     <div className="navlist-flex-container">
                         {renderIconImage()}
                         <Link to={aLink} className="navlist-link-wrapper" to={aLink} style={renderWrapperStyle()}>
