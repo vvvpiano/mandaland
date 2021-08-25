@@ -75,7 +75,7 @@ export const renderMonthlyActivity = (props) => {
             <h3 className="monthlyTitle english">Monthly Activity</h3>
             <div className="progressAlign">
                 {monthlyActivityData.map((each)=>{
-                    return <MonthlyProgress month={each.month} progress={each.progress}/>
+                    return <MonthlyProgress month={each.month} progress={each.progress} highest={each.highest} lowest={each.lowest}/>
                 })}
             </div>
         </article>
@@ -123,9 +123,9 @@ export const renderFinishedMandals = (props) => {
 const monthlyActivityData = [
     { month: "Jan", progress: 90,},
     { month: "Feb",progress: 80, },
-    { month: "Mar", progress: 100, },
+    { month: "Mar", progress: 100, highest: true},
     { month: "Apr", progress: 70, },
-    { month: "May", progress: 10, },
+    { month: "May", progress: 10, lowest: true},
     { month: "Jun", progress: 50, },
     { month: "Jul", progress: 30, },
     { month: "Aug", progress: 20, },

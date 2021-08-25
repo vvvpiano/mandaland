@@ -81,6 +81,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
 }
 .gridItem:nth-child(2) {
     background-color: #fff;
