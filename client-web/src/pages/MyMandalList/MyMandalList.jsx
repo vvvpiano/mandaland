@@ -53,7 +53,6 @@ const mandalListStyle = {
 }
 // TO DO: user id로 user info 가지고오는 reducer
 export const renderCurrentProfile = (props) => {
-    console.log(props.friends[0])
     if(props.friends[0] == undefined) {
         return <div>no user data</div>
     }
@@ -185,7 +184,6 @@ const finishedMandalArr = [
     },
 ]
 const mapStateToProps = (state) => {
-    console.log(state);
     return { 
         user: state.user,
         mandalarts: state.mandalarts.mandalarts,

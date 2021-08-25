@@ -59,7 +59,9 @@
         9
       ],
       "userId": 2,
-      "thumbnailPath": "/images/cat1.png"
+      "thumbnailPath": "/images/cat1.png",
+      "startDate": "2021-05-01",
+      "endDate": "2021-08-01"
     },
     {
       "id": 3,
@@ -77,7 +79,9 @@
         9
       ],
       "userId": 2,
-      "thumbnailPath": "/images/cat2.png"
+      "thumbnailPath": "/images/cat2.png",
+      "startDate": "2021-05-30",
+      "endDate": "2021-07-01"
     },
     {
       "userId": "2",
