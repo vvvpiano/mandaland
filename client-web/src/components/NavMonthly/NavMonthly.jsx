@@ -91,7 +91,7 @@ class NavMonthly extends React.Component {
 
     render = () => {
         return (
-            <div className={`navmonthly-container ${this.renderClassName()}`}>
+            <div className={`navmonthly-container english ${this.renderClassName()}`}>
                 <div className="navmonthly-title">Monthly progress</div>
                 <div className="calendar-container">
                     {this.renderMonthTitle()}

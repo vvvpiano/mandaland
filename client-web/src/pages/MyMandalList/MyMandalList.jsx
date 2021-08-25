@@ -10,6 +10,7 @@ import "./MyMandalList.css"
 const MyMandalList = (props) => {
     const id = window.localStorage.getItem("id");
     const [routeId, setRouteId] = useState(props.match.params.userid)
+    var [sameUser, setSameUser] = useState(id==routeId)
     useEffect(() => { 
         props.getMandal(routeId)
         props.getFriendInfo(routeId)
@@ -18,16 +19,16 @@ const MyMandalList = (props) => {
         <div className="wrapMandallist">
             <section className="mandalSmallList">
                 <div className="wrapModal">
-                    {id == routeId ? <MandalViewChanger /> : <FeedTitle />}
+                    {sameUser ? <MandalViewChanger /> : <FeedTitle />}
                     <section className="gridContainer">
                         {/* 1. profile */}
-                        {renderCurrentProfile(props)}
+                        {renderCurrentProfile(props, sameUser)}
 
                         {/* 2. Monthly Activity */}
-                        {renderMonthlyActivity(props)}
+                        {renderMonthlyActivity(props, sameUser)}
                         
                         {/* (optional) 3. BUTTON -> go to mandaland */}
-                        {id == routeId ? <div></div>:renderMandalandBtn(props)}
+                        {renderMandalandBtn(props, sameUser)}
 
                         {/* 4. 진행중인 만다라트 */}
                         {renderCurrentMandal(props)}
@@ -52,14 +53,14 @@ const mandalListStyle = {
     width: "100%"
 }
 // TO DO: user id로 user info 가지고오는 reducer
-export const renderCurrentProfile = (props) => {
-    console.log(props.friends[0])
+export const renderCurrentProfile = (props, sameUser) => {
     if(props.friends[0] == undefined) {
         return <div>no user data</div>
     }
     return (
         <article className="gridItem">
             <div className="myMiniProfile">
+                {sameUser && <img src={window.location.origin + "/icons/dots.svg" } alt="" className="dotMargin"/>}
                 <img src={props.friends[0].imagePath === null ? window.location.origin + "/icons/user.svg" : props.friends[0].imagePath} alt="" className="profileImg" />
                 <h2 className="userName">{props.friends[0].name}</h2>
                 <h3 class="userEmail">{props.friends[0].email}</h3>
@@ -69,19 +70,28 @@ export const renderCurrentProfile = (props) => {
     )
 }
 
-export const renderMonthlyActivity = (props) => {
+export const renderMonthlyActivity = (props, sameUser) => {
+    console.log(sameUser);
+
+    const gridStyle = {
+        gridColumn: "2/6",
+    }
     return (
-        <article className="gridItem makeMargin">
+        <article className={`gridItem ${sameUser && "gridModify"}`} >
             <h3 className="monthlyTitle english">Monthly Activity</h3>
             <div className="progressAlign">
                 {monthlyActivityData.map((each)=>{
-                    return <MonthlyProgress month={each.month} progress={each.progress}/>
+                    return <MonthlyProgress month={each.month} progress={each.progress} highest={each.highest} lowest={each.lowest}/>
                 })}
             </div>
         </article>
     )
 }
-export const renderMandalandBtn = (props) => {
+export const renderMandalandBtn = (props, sameUser) => {
+
+    if(sameUser) {
+        return <div></div>
+    }
     return (
         <button className="gridItem goMandalandBtn">
             <img src={window.location.origin + "/icons/mandaland.svg"} alt="" />
@@ -123,9 +133,9 @@ export const renderFinishedMandals = (props) => {
 const monthlyActivityData = [
     { month: "Jan", progress: 90,},
     { month: "Feb",progress: 80, },
-    { month: "Mar", progress: 100, },
+    { month: "Mar", progress: 100, highest: true},
     { month: "Apr", progress: 70, },
-    { month: "May", progress: 10, },
+    { month: "May", progress: 10, lowest: true},
     { month: "Jun", progress: 50, },
     { month: "Jul", progress: 30, },
     { month: "Aug", progress: 20, },
@@ -185,7 +195,6 @@ const finishedMandalArr = [
     },
 ]
 const mapStateToProps = (state) => {
-    console.log(state);
     return { 
         user: state.user,
         mandalarts: state.mandalarts.mandalarts,

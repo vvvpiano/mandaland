@@ -4,21 +4,21 @@
       "userId": "111098462535511801220",
       "email": "vvvpiano60@gmail.com",
       "name": "김서영",
-      "imagePath": "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw=s96-c",
+      "imagePath": "https://lh3.googleusercontent.com/a-/AOh14Gj_4JMsoLLdEkDJ-_tb9MojLHH-DFAxWEZbDYe5Sw",
       "id": 1
     },
     {
       "userId": "108449024264620819194",
       "email": "ummae.ha@gmail.com",
       "name": "[기획자] 김양하",
-      "imagePath": "https://lh3.googleusercontent.com/a-/AOh14GgNjvW-PSK8WofI2yQbvZDMnrjp8OnPeZugi5d0=s96-c",
+      "imagePath": "https://lh3.googleusercontent.com/a-/AOh14GgNjvW-PSK8WofI2yQbvZDMnrjp8OnPeZugi5d0",
       "id": 2
     },
     {
       "userId": "10293090293",
       "email": "raya0000@gmail.com",
       "name": "냥하",
-      "imagePath": "https://lh3.googleusercontent.com/a-/AOh14GgNjvW-PSK8WofI2yQbvZDMnrjp8OnPeZugi5d0=s96-c",
+      "imagePath": "https://lh3.googleusercontent.com/a-/AOh14GgNjvW-PSK8WofI2yQbvZDMnrjp8OnPeZugi5d0",
       "id": 3
     }
   ],
@@ -59,7 +59,9 @@
         9
       ],
       "userId": 2,
-      "thumbnailPath": "/images/cat1.png"
+      "thumbnailPath": "/images/cat1.png",
+      "startDate": "2021-05-01",
+      "endDate": "2021-08-01"
     },
     {
       "id": 3,
@@ -77,7 +79,9 @@
         9
       ],
       "userId": 2,
-      "thumbnailPath": "/images/cat2.png"
+      "thumbnailPath": "/images/cat2.png",
+      "startDate": "2021-05-30",
+      "endDate": "2021-07-01"
     },
     {
       "userId": "2",
@@ -132,6 +136,26 @@
       ],
       "thumnailPath": "",
       "id": 6
+    },
+    {
+      "userId": "2",
+      "title": "뮤지컬 보러갑시다",
+      "contents": "뮤지컬조아",
+      "startDate": "2021-08-01",
+      "endDate": "2021-09-23",
+      "miniIds": [
+        38,
+        37,
+        40,
+        39,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "thumnailPath": "",
+      "id": 7
     }
   ],
   "minimandals": [
@@ -746,6 +770,159 @@
       "mandalId": 6,
       "userId": "2",
       "id": 36
+    },
+    {
+      "keyword": "위키드",
+      "goals": [
+        "조",
+        "아",
+        "집",
+        "사",
+        "위키드",
+        "부",
+        "일",
+        "체",
+        "좋"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 37
+    },
+    {
+      "keyword": "넘버",
+      "goals": [
+        "위",
+        "키",
+        "드",
+        "조",
+        "넘버",
+        "아",
+        "레",
+        "베",
+        "카"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 38
+    },
+    {
+      "keyword": "차지연",
+      "goals": [
+        "커",
+        "톤",
+        "조",
+        "아",
+        "차지연",
+        "ㅇㄹ",
+        "ㅁ나",
+        "나",
+        "러"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 39
+    },
+    {
+      "keyword": "레베카",
+      "goals": [
+        "아",
+        "요",
+        "이",
+        "노",
+        "레베카",
+        "베",
+        "이",
+        "션",
+        "해"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 40
+    },
+    {
+      "keyword": "뮤지컬",
+      "goals": [
+        "넘버",
+        "위키드",
+        "레베카",
+        "차지연",
+        "뮤지컬",
+        "마리앙",
+        "옥주연",
+        "이창섭",
+        "신성록"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 41
+    },
+    {
+      "keyword": "마리앙",
+      "goals": [
+        "ㅇㄹ",
+        "ㄴㅇ",
+        "ㅇㄴ",
+        "ㄹㅇ",
+        "마리앙",
+        "ㅇㄴ",
+        "ㅗ호ㅓ",
+        "ㄹㅎ",
+        "ㄹㅇ"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 42
+    },
+    {
+      "keyword": "옥주연",
+      "goals": [
+        "오",
+        "호",
+        "오",
+        "ㅇㅎ",
+        "옥주연",
+        "ㅇ",
+        "ㅗ",
+        "ㄹㅎ",
+        "ㄹ"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 43
+    },
+    {
+      "keyword": "이창섭",
+      "goals": [
+        "ㅇ",
+        "ㅁㄴ",
+        "ㄹㅇ",
+        "ㄴㅇ",
+        "이창섭",
+        "ㅇㅇㄴ",
+        "ㅇㄴ",
+        "ㅇㄴ",
+        "ㅇㄴ"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 44
+    },
+    {
+      "keyword": "신성록",
+      "goals": [
+        "ㄹㅎ",
+        "ㅊㅌ",
+        "ㅇㄴ",
+        "ㅌㅋㅍㅊ",
+        "신성록",
+        "ㅁㄴ",
+        "ㅇㄴ",
+        "ㅁㄴ",
+        "ㅇㄴ"
+      ],
+      "mandalId": 7,
+      "userId": "2",
+      "id": 45
     }
   ],
   "checklogs": [
@@ -1848,6 +2025,116 @@
       "userId": "2",
       "mandalId": "6",
       "id": 11
+    },
+    {
+      "date": "20210825",
+      "year": 2021,
+      "month": 7,
+      "day": 25,
+      "checks": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "userId": "2",
+      "mandalId": "7",
+      "id": 12
     }
   ]
 }

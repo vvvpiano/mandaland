@@ -21,6 +21,7 @@ body {
     justify-content: center;
     width: 100%;
     padding: 52px 80px 0 80px;
+    margin-left: 280px;
 }
 .english {
     font-family: Archivo;
@@ -30,4 +31,17 @@ body {
 }
 .pixel-code {
     font-family: DungGeunMo-Code;
+}
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #969696;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+*::-webkit-scrollbar-track {
+    background-color: #E0E0E0;
+    box-shadow: inset 0px 0px 3px white;
 }

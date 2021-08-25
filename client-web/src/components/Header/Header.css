@@ -4,6 +4,8 @@
     padding: 19px 51px;
     background-color: #f0f0f0;
     height: 42px;
+    background-color: #F06756;
+    border-bottom: 4px solid #000;
 }
 .fixed {
     position: fixed;

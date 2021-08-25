@@ -3,6 +3,13 @@
     width: 280px;
     /* height: 100%; */
     transition: width 0.5s;
+    background-color: #414CEC;
+    border-right: 4px solid #000;
+    font-weight: 600;
+    z-index: 99;
+    position: fixed;
+    overflow: auto;
+    height: 100vh;
 }
 
 .toggle-button-wrapper {
@@ -17,4 +24,10 @@
     border-radius: 10px;
     background-color: white;
     cursor: pointer;
+}
+.wrapNavmenu {
+    margin-bottom: 40px;
+}
+.marginDiv {
+    margin:100px 0 100px 0
 }
