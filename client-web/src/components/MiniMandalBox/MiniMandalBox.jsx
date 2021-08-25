@@ -5,7 +5,7 @@ import "./MiniMandalBox.css"
 
 const MiniMandalBox = (props) => {
     return (
-        <div className={`${props.size}MandalBox ${props.size}Mandal`}>
+        <div className={`${props.size}MandalBox ${props.size}Mandal ${props.backgroundColor == true ? "bgShadow" : ''}`}>
             <ul>
                 <li>
                     {/* TO DO: 이미지 변경 가능하도록 */}
@@ -32,7 +32,8 @@ const MiniMandalBox = (props) => {
                     }
                 </li>
                 <li>
-                    <div className="textTitleDate">
+                    {console.log(props)}
+                    <div className={`textTitleDate ${props.backgroundColor == true ? "bgYellow" : ''}`}>
                         <span>{props.title}</span>
                         {props.startDate != null && (
                             <span>

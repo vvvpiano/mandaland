@@ -33,7 +33,7 @@ class Navbar extends React.Component {
         return (
             <nav className="navbar" style={{ width: this.renderNavWidth() + "px" }}>
                 <NavProfile open={this.state.open} userProfile={this.props.user} />
-                <div>
+                <div className="wrapNavmenu">
                     <Navlist title="Home" iconPath={imagePaths[0]} open={this.state.open} aLink={tempLink} />
                     <Navlist title="Feed" iconPath={imagePaths[1]} open={this.state.open} aLink={tempLink} />
                     <Navlist title="Mandalplan" iconPath={imagePaths[2]} open={this.state.open} aLink={"/mandalplan"} dropContent={this.dropContent} />

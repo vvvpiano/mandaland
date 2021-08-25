@@ -35,7 +35,7 @@ const FeedBeforeLogin = (props) => {
                     <div className="currentMandals" style={curMandalMarginstyle}>
                         {/* 일단 인기만다라트를 측정할 척도가 없으므로 더미로 넣음 */}
                         {currentMandalArr.map((mandal) => {
-                            return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}  getHeart={true} userInfo={mandal} thumbnail={mandal.thumbnailPath} imagePath={mandal.imagePath} name={mandal.userName}/>
+                            return <MiniMandalBox key={mandal.id} size="mini" title={mandal.title} startDate={mandal.startDate} endDate={mandal.endDate}  getHeart={true} userInfo={mandal} thumbnail={mandal.thumbnailPath} imagePath={mandal.imagePath} name={mandal.userName} heartNum={mandal.heartNum} backgroundColor={true}/>
                         })}
                     </div>
 
